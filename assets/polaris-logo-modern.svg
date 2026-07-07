@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 210" role="img" aria-labelledby="title desc">
+  <title id="title">Polaris Tax Intelligence</title>
+  <desc id="desc">A modern Polaris logo with a simplified north-star mark and wordmark.</desc>
+  <defs>
+    <style>
+      .navy { fill: #06264a; }
+      .slate { fill: #2f7dd3; }
+      .gold { fill: #b9954d; }
+      .line { stroke: #06264a; stroke-linejoin: round; stroke-width: 8; }
+      .wordmark {
+        fill: #06264a;
+        font-family: Inter, Avenir Next, Montserrat, Arial, sans-serif;
+        font-size: 74px;
+        font-weight: 760;
+        letter-spacing: 5px;
+      }
+      .descriptor {
+        fill: #3f4856;
+        font-family: Inter, Avenir Next, Montserrat, Arial, sans-serif;
+        font-size: 27px;
+        font-weight: 720;
+        letter-spacing: 6px;
+      }
+    </style>
+  </defs>
+
+  <g transform="translate(72 18)">
+    <polygon class="navy" points="72,0 91,59 72,82 53,59" />
+    <polygon class="navy" points="72,144 53,85 72,62 91,85" />
+    <polygon class="navy" points="0,72 59,53 82,72 59,91" />
+    <polygon class="navy" points="144,72 85,91 62,72 85,53" />
+
+    <polygon class="slate" points="24,24 55,40 47,53" />
+    <polygon class="slate" points="120,24 97,53 89,40" />
+    <polygon class="slate" points="120,120 89,104 97,91" />
+    <polygon class="slate" points="24,120 47,91 55,104" />
+
+    <polygon class="line" fill="#ffffff" points="72,23 83,61 121,72 83,83 72,121 61,83 23,72 61,61" />
+    <circle class="gold" cx="72" cy="72" r="11" />
+  </g>
+
+  <text class="wordmark" x="210" y="94">POLARIS</text>
+  <text class="descriptor" x="214" y="139">TAX INTELLIGENCE</text>
+</svg>
