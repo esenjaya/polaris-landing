@@ -894,3 +894,17 @@ details p {
     flex-direction: column;
   }
 }
+
+.contact-form .botcheck {
+  display: none;
+}
+
+.form-status {
+  margin: 0;
+  font-size: 0.95rem;
+  min-height: 1.4em;
+}
+
+.form-status:empty {
+  display: none;
+}
