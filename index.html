@@ -316,10 +316,13 @@
             whether that means an assessment, roadmap, prototype, or example workflow discussion.
           </p>
         </div>
-        <form class="contact-form" aria-label="Request an automation assessment">
+        <form class="contact-form" aria-label="Request an automation assessment" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="cba1fe1a-8251-4f22-8269-0f38f1c2bf09" />
+          <input type="hidden" name="subject" value="New automation assessment request — polaristaxai.com" />
+          <input type="checkbox" name="botcheck" class="botcheck" tabindex="-1" autocomplete="off" />
           <label>
             Name
-            <input type="text" name="name" autocomplete="name" placeholder="Your name" />
+            <input type="text" name="name" autocomplete="name" placeholder="Your name" required />
           </label>
           <label>
             Company
@@ -331,13 +334,14 @@
           </label>
           <label>
             Email
-            <input type="email" name="email" autocomplete="email" placeholder="you@example.com" />
+            <input type="email" name="email" autocomplete="email" placeholder="you@example.com" required />
           </label>
           <label>
             What tax process do you want to improve?
             <textarea name="message" rows="4" placeholder="Briefly describe the workflow, deadline, tool, recurring tax task, or demo topic."></textarea>
           </label>
           <button type="submit">Request an automation assessment</button>
+          <p class="form-status" role="status" aria-live="polite"></p>
         </form>
       </section>
     </main>
@@ -347,5 +351,29 @@
       <p>Tax automation consulting for modern finance and tax teams.</p>
       <a href="#top">Back to top</a>
     </footer>
+
+    <script>
+      const form = document.querySelector(".contact-form");
+      const status = form.querySelector(".form-status");
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        const button = form.querySelector("button[type=submit]");
+        button.disabled = true;
+        status.textContent = "Sending…";
+        try {
+          const response = await fetch(form.action, {
+            method: "POST",
+            body: new FormData(form),
+            headers: { Accept: "application/json" },
+          });
+          if (!response.ok) throw new Error("Request failed");
+          form.reset();
+          status.textContent = "Thank you — your request has been sent. We will be in touch shortly.";
+        } catch (error) {
+          status.textContent = "Something went wrong sending your request. Please email us directly or try again.";
+          button.disabled = false;
+        }
+      });
+    </script>
   </body>
 </html>
