@@ -1,0 +1,6 @@
+# robots.txt for Polaris Tax Intelligence
+# Allow all reputable crawlers to index the whole site.
+User-agent: *
+Allow: /
+
+Sitemap: https://www.polaristaxai.com/sitemap.xml
