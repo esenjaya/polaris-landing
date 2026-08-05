@@ -1,10 +1,38 @@
-# Secrets — never commit these
+# === Secrets & credentials (never commit) ===
 .env
 .env.*
 *.pem
 *.key
+*.p12
+*.pfx
+*.crt
+*.cer
+credentials*.json
+token*.json
+*service-account*.json
+*secret*
+*.secret
 
-# OS / editor noise
+# === Documents & data that may contain personal / client info ===
+*.pdf
+*.doc
+*.docx
+*.rtf
+*.xls
+*.xlsx
+*.csv
+*.tsv
+*.numbers
+*.pages
+
+# === OS / editor noise ===
 Thumbs.db
 desktop.ini
 .DS_Store
+*.swp
+*~
+.idea/
+.vscode/
+
+# Note: web assets (.html .css .svg .png .jpg .webp .ico) are intentionally NOT ignored —
+# this is a static site and needs them. Keep personal documents out of this repo entirely.
