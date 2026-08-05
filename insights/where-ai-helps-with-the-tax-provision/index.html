@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Where AI Genuinely Helps With the Tax Provision, and Where It Doesn't | Polaris Tax Intelligence</title>
+    <meta
+      name="description"
+      content="An honest, practitioner's view on AI and the tax provision: where it genuinely reduces manual work, where it does not belong near ASC 740 judgment, and the guardrails that make it safe to use."
+    />
+    <link rel="canonical" href="https://www.polaristaxai.com/insights/where-ai-helps-with-the-tax-provision/" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://www.polaristaxai.com/insights/where-ai-helps-with-the-tax-provision/" />
+    <meta property="og:title" content="Where AI Genuinely Helps With the Tax Provision, and Where It Doesn't" />
+    <meta property="og:description" content="A grounded take on where AI reduces manual provision work, where it should stay out of ASC 740 judgment, and the guardrails that make it safe." />
+    <meta property="og:image" content="https://www.polaristaxai.com/assets/polaris-logo-modern-white-bg.png" />
+    <meta property="og:site_name" content="Polaris Tax Intelligence" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="article:published_time" content="2026-08-05" />
+    <meta property="article:author" content="Eva Haakenson" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Where AI Genuinely Helps With the Tax Provision, and Where It Doesn't" />
+    <meta name="twitter:description" content="A grounded take on where AI reduces manual provision work, and where it should stay out of ASC 740 judgment." />
+    <meta name="twitter:image" content="https://www.polaristaxai.com/assets/polaris-logo-modern-white-bg.png" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Where AI Genuinely Helps With the Tax Provision, and Where It Doesn't",
+        "description": "An honest, practitioner's view on AI and the tax provision: where it genuinely reduces manual work, where it does not belong near ASC 740 judgment, and the guardrails that make it safe to use.",
+        "datePublished": "2026-08-05",
+        "dateModified": "2026-08-05",
+        "author": { "@type": "Person", "name": "Eva Haakenson" },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Polaris Tax Intelligence",
+          "logo": { "@type": "ImageObject", "url": "https://www.polaristaxai.com/assets/polaris-logo-modern-white-bg.png" }
+        },
+        "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.polaristaxai.com/insights/where-ai-helps-with-the-tax-provision/" },
+        "image": "https://www.polaristaxai.com/assets/polaris-logo-modern-white-bg.png"
+      }
+    </script>
+
+    <style>
+      :root {
+        --navy: #092642; --ink: #132235; --muted: #627084; --line: #dce6ee;
+        --soft: #f6fafb; --soft-blue: #eef6fa; --white: #ffffff; --accent: #2f7dd3;
+        --teal: #2aa7a0; --gold: #b9954d; --silver: #c9d6df;
+        --shadow: 0 24px 70px rgba(9, 38, 66, 0.11); --shadow-sm: 0 10px 30px rgba(9, 38, 66, 0.08);
+        --radius: 18px;
+      }
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0; color: var(--ink); background: var(--white);
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        line-height: 1.55; -webkit-font-smoothing: antialiased; overflow-x: hidden;
+      }
+      h1, h2, h3, p { overflow-wrap: break-word; }
+      a { color: inherit; text-decoration: none; }
+
+      .site-header { display: flex; align-items: center; justify-content: space-between; gap: 24px; max-width: 1180px; margin: 0 auto; padding: 22px 32px; }
+      .brand { display: flex; align-items: center; }
+      .brand img { width: clamp(198px, 17vw, 236px); height: auto; display: block; }
+      .nav-links { display: flex; gap: 30px; font-size: 1rem; color: var(--ink); font-weight: 600; }
+      .nav-links a:hover { color: var(--accent); }
+      .nav-links a.current { color: var(--accent); }
+      .header-cta { background: var(--navy); color: #fff; padding: 11px 20px; border-radius: 999px; font-size: 0.9rem; font-weight: 600; transition: transform .15s ease, box-shadow .15s ease; }
+      .header-cta:hover { transform: translateY(-1px); box-shadow: var(--shadow-sm); }
+
+      .article-wrap { max-width: 720px; margin: 0 auto; padding: 30px 32px 70px; }
+      .breadcrumb { font-size: 0.85rem; color: var(--muted); margin: 0 0 22px; }
+      .breadcrumb a:hover { color: var(--accent); }
+      .article-eyebrow { display: inline-block; font-size: 0.74rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 800; color: var(--accent); margin: 0 0 14px; }
+      .article-wrap h1 { font-size: clamp(2rem, 4vw, 2.7rem); line-height: 1.12; letter-spacing: -0.02em; color: var(--navy); font-weight: 800; margin: 0 0 18px; }
+      .byline { display: flex; align-items: center; gap: 12px; color: var(--muted); font-size: 0.9rem; margin: 0 0 30px; padding-bottom: 26px; border-bottom: 1px solid var(--line); }
+      .byline .avatar { width: 40px; height: 40px; border-radius: 50%; flex: 0 0 40px; background: url('/assets/eva-avatar.jpg') center / cover, var(--soft-blue); box-shadow: inset 0 0 0 1px rgba(9,38,66,0.08); }
+      .byline b { color: var(--navy); }
+      .article-body p { font-size: 1.08rem; color: var(--ink); margin: 0 0 20px; }
+      .article-body ul { margin: 0 0 22px; padding-left: 22px; }
+      .article-body li { font-size: 1.08rem; color: var(--ink); margin: 0 0 12px; }
+      .article-body li strong { color: var(--navy); }
+      .article-body h2 { font-size: clamp(1.3rem, 2.4vw, 1.6rem); color: var(--navy); letter-spacing: -0.01em; margin: 40px 0 14px; }
+      .article-body strong { color: var(--navy); }
+      .pullquote { margin: 30px 0; padding: 4px 0 4px 22px; border-left: 3px solid var(--teal); color: var(--navy); font-size: 1.18rem; font-weight: 600; line-height: 1.4; }
+
+      .article-cta { margin-top: 46px; background: var(--navy); color: #fff; border-radius: var(--radius); padding: 34px 32px; box-shadow: var(--shadow); }
+      .article-cta h3 { margin: 0 0 10px; font-size: 1.35rem; color: #fff; letter-spacing: -0.01em; }
+      .article-cta p { margin: 0 0 20px; color: rgba(255,255,255,0.85); font-size: 1rem; }
+      .article-cta a { display: inline-block; background: #fff; color: var(--navy); padding: 13px 24px; border-radius: 999px; font-weight: 600; font-size: 0.98rem; transition: transform .15s ease, box-shadow .15s ease; }
+      .article-cta a:hover { transform: translateY(-2px); box-shadow: 0 16px 34px rgba(0,0,0,0.25); }
+
+      .site-footer { border-top: 1px solid var(--line); }
+      .footer-inner { max-width: 1180px; margin: 0 auto; padding: 34px 32px; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+      .footer-inner img { width: 168px; height: auto; }
+      .footer-inner p { margin: 0; color: var(--muted); font-size: 0.9rem; }
+      .footer-inner a { color: var(--navy); font-weight: 600; font-size: 0.9rem; }
+
+      @media (max-width: 700px) {
+        .nav-links { display: none; }
+        .site-header { padding: 14px 16px; gap: 10px; flex-wrap: wrap; }
+        .brand img { width: 170px; }
+        .header-cta { padding: 9px 15px; font-size: 0.85rem; }
+        .article-wrap { padding: 22px 16px 54px; }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="Polaris Tax Intelligence home">
+        <img src="/assets/polaris-logo-modern.svg" alt="Polaris Tax Intelligence" />
+      </a>
+      <nav class="nav-links" aria-label="Site">
+        <a href="/#services">What we do</a>
+        <a href="/#pilot">Pilot</a>
+        <a href="/#about">About</a>
+        <a href="/insights/" class="current">Insights</a>
+        <a href="/#faq">FAQ</a>
+      </nav>
+      <a class="header-cta" href="/#contact">Explore a pilot</a>
+    </header>
+
+    <main>
+      <article class="article-wrap">
+        <p class="breadcrumb"><a href="/">Home</a> / <a href="/insights/">Insights</a> / Where AI helps with the tax provision</p>
+
+        <span class="article-eyebrow">Insights</span>
+        <h1>Where AI Genuinely Helps With the Tax Provision, and Where It Doesn't</h1>
+
+        <div class="byline">
+          <span class="avatar" role="img" aria-label="Eva Haakenson"></span>
+          <span>By <b>Eva Haakenson</b>, Founder of Polaris Tax Intelligence &nbsp;·&nbsp; August 5, 2026 &nbsp;·&nbsp; 6 min read</span>
+        </div>
+
+        <div class="article-body">
+          <p>There is a lot of noise right now about AI and tax. Some of it promises that the provision will soon run itself. Some of it insists that AI has no business anywhere near something as technical as ASC 740. After nearly twenty years in corporate tax, with the most recent stretch spent building automation for the provision, my honest view sits in between. AI is genuinely useful for parts of the provision, and genuinely a bad idea for others. The real skill is knowing which is which.</p>
+
+          <h2>The provision is not one task</h2>
+          <p>It helps to remember what the provision actually is. It is not a single job, it is a chain of them: gathering data, mapping it, running calculations, documenting positions, tying everything out, and preparing workpapers a reviewer can trust. Some links in that chain are mechanical and repetitive. Others require professional judgment and carry real consequences when they are wrong. AI belongs in the first group. It should stay out of the second.</p>
+
+          <h2>Where AI genuinely helps</h2>
+          <p>These are the parts of the work where AI can take real weight off your team, because the human stays in control of the result:</p>
+          <ul>
+            <li><strong>Wrangling and standardizing data.</strong> Pulling information out of documents, normalizing inconsistent formats, and suggesting a first-pass account mapping that a person then confirms. This is exactly the kind of tedious setup work that eats hours and adds no judgment.</li>
+            <li><strong>Drafting and documentation.</strong> Turning your notes into a first draft of a memo or a workpaper narrative, so you are editing something rather than starting from a blank page.</li>
+            <li><strong>Surfacing inconsistencies.</strong> Flagging numbers that do not tie, balances that moved unexpectedly, or items that look out of pattern, so a person knows where to look first.</li>
+            <li><strong>Repetitive reconciliations and checks.</strong> Running the tedious, rules-based comparisons quickly and the same way every time, without the fatigue that creeps in at hour eleven.</li>
+          </ul>
+          <p>The common thread is that AI reduces the manual effort while a person still owns the outcome. Nothing here decides a tax answer. It clears the path so a professional can get to the answer faster.</p>
+
+          <h2>Where AI does not belong</h2>
+          <p>Just as important is being honest about where it should not be used:</p>
+          <ul>
+            <li><strong>Technical positions and conclusions.</strong> Whether a position is supportable, how a specific item should be treated under ASC 740, what the right answer actually is. That is professional judgment, and it stays with your team and your advisors.</li>
+            <li><strong>Anything that must be exactly right and defensible.</strong> A tool that is usually right is not good enough for numbers that feed audited financial statements. Provision work has to be reliable and auditable, not probabilistically close.</li>
+            <li><strong>Novel or ambiguous situations.</strong> AI is weakest precisely where the law is unsettled or the facts are unusual, which is exactly where you most need an experienced human making the call.</li>
+            <li><strong>Confidentiality-sensitive steps.</strong> Sensitive company or client financial data should never be pasted into a public AI tool. Where the data goes matters as much as what the tool can do.</li>
+          </ul>
+
+          <h2>The line I use</h2>
+          <p>When I decide whether to automate a step, I ask one question: is this reducing manual work, or is it making a judgment?</p>
+          <p class="pullquote">If it is manual work, automation is fair game, with a person reviewing the output. If it is judgment, a person owns it, and the tool is there to inform them, never to decide for them.</p>
+          <p>That single distinction keeps you on the right side of the line. Automation should give your specialists more time for review, judgment, and planning. It should not quietly take those things over.</p>
+
+          <h2>The guardrails that make it safe</h2>
+          <p>Used carelessly, AI can absolutely make provision work worse. Used with a few guardrails, it earns its place:</p>
+          <ul>
+            <li><strong>Keep a human in the loop</strong> on anything that matters. Review is not optional.</li>
+            <li><strong>Use controlled inputs and validation checks,</strong> so you can trust what goes in and catch anything odd that comes out.</li>
+            <li><strong>Make it auditable.</strong> You should be able to see how a number was produced and trace it back to its source.</li>
+            <li><strong>Protect confidentiality.</strong> Know where the data goes, and agree the controls before any work begins.</li>
+          </ul>
+
+          <h2>What this means in practice</h2>
+          <p>This is the philosophy behind how I built Polaris. The goal was never to replace the tax specialist, and it never will be. It was to take the manual, repetitive parts of the provision off their plate so they can spend their time where it actually counts, on review, judgment, and planning.</p>
+          <p>Used this way, with the right guardrails, AI does not make tax less human. It gives the humans back the hours the manual work was quietly taking from them.</p>
+        </div>
+
+        <div class="article-cta">
+          <h3>Curious where AI actually fits in your provision?</h3>
+          <p>If you want a grounded, honest read on where automation can safely reduce manual work in your provision, and where it should not, Polaris can help. We are onboarding a small number of pilot partners now for our ASC 740 provision automation workflow.</p>
+          <a href="/#contact">Explore a pilot</a>
+        </div>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <a href="/"><img src="/assets/polaris-logo-modern.svg" alt="Polaris Tax Intelligence" /></a>
+        <p>Tax automation &amp; advisory for in-house tax teams and CPA firms.</p>
+        <a href="/insights/">More insights</a>
+      </div>
+    </footer>
+  </body>
+</html>
