@@ -39,6 +39,6 @@
     <circle class="gold" cx="72" cy="72" r="11" />
   </g>
 
-  <text class="wordmark" x="210" y="94">POLARIS</text>
-  <text class="descriptor" x="214" y="139">TAX INTELLIGENCE</text>
+  <text class="wordmark" x="230" y="94">POLARIS</text>
+  <text class="descriptor" x="234" y="139">TAX INTELLIGENCE</text>
 </svg>
