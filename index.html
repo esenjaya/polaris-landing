@@ -337,6 +337,13 @@
       .privacy-line { font-size: 0.78rem; color: var(--muted); margin: 2px 0 0; line-height: 1.5; }
       .privacy-line a { color: var(--accent); text-decoration: underline; }
 
+      /* ---- Privacy notice ---- */
+      .privacy-section { border-top: 1px solid var(--line); background: #fff; }
+      .privacy-inner { max-width: 760px; margin: 0 auto; padding: 56px 32px; }
+      .privacy-inner .eyebrow { margin-bottom: 14px; }
+      .privacy-inner h2 { font-size: clamp(1.3rem, 2vw, 1.6rem); color: var(--navy); margin: 0 0 16px; letter-spacing: -0.01em; }
+      .privacy-inner p { color: var(--muted); font-size: 0.95rem; margin: 0 0 12px; max-width: none; }
+
       /* ---- Footer ---- */
       .site-footer { border-top: 1px solid var(--line); }
       .footer-inner { max-width: 1180px; margin: 0 auto; padding: 34px 32px; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
@@ -372,7 +379,7 @@
         .brand img { width: 170px; min-width: 0; }
         .header-cta { padding: 9px 15px; font-size: 0.85rem; }
         .hero { padding: 20px 16px 40px; }
-        .who-inner, .services-section, .about-section, .faq-section { padding-left: 16px; padding-right: 16px; }
+        .who-inner, .services-section, .about-section, .faq-section, .privacy-inner { padding-left: 16px; padding-right: 16px; }
         .consult-inner, .contact-inner, .footer-inner, .trust-inner { padding-left: 16px; padding-right: 16px; }
         .hero h1 { font-size: clamp(2rem, 9vw, 2.6rem); }
       }
@@ -583,6 +590,16 @@
             <p class="form-status" role="status" aria-live="polite"></p>
             <p class="privacy-line">By submitting, you agree we may contact you about your inquiry. We don’t sell or share your details. See our <a href="#privacy">privacy notice</a>.</p>
           </form>
+        </div>
+      </section>
+      <!-- Privacy notice — resolves the #privacy link on the contact form -->
+      <section class="privacy-section" id="privacy">
+        <div class="privacy-inner">
+          <p class="eyebrow">Privacy notice</p>
+          <h2>How we handle your information</h2>
+          <p>Polaris Tax Intelligence collects only the details you choose to share through the contact form on this site: your name, company or firm, email address, and message. We use that information solely to respond to your inquiry and to follow up about a potential pilot or engagement.</p>
+          <p>We do not sell, rent, or share your information with third parties for their own marketing, and your inquiry is treated confidentially. Contact form submissions are delivered to us through a third-party form provider that passes your message along and does not use it for advertising.</p>
+          <p>If you would like us to update or delete the details you have shared, let us know through the contact form above and we will take care of it.</p>
         </div>
       </section>
     </main>
