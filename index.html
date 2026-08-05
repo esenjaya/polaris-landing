@@ -3,377 +3,561 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Polaris Tax Intelligence | Tax Automation Consulting</title>
+
+    <!-- ============================================================
+         SEO HEAD BLOCK (folds into the real site's <head>)
+         Existing on live site: title, description, icon  ✔
+         NEW below: canonical, Open Graph, Twitter, JSON-LD schema
+         ============================================================ -->
+    <title>Polaris Tax Intelligence | ASC 740 Provision Automation</title>
     <meta
       name="description"
-      content="Polaris Tax Intelligence helps businesses modernize tax processes with automation, AI-enabled workflows, and nearly 20 years of tax experience across public accounting and industry."
+      content="Polaris helps CPA firms and in-house tax teams prepare reviewable ASC 740 tax provisions with less manual work, built on CPA firm and in-house tax experience."
     />
-    <link rel="icon" href="assets/polaris-logo-modern.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="styles.css?v=20260707-mission-balance" />
+    <link rel="canonical" href="https://www.polaristaxai.com/" />
+
+    <!-- Open Graph (LinkedIn / Slack / Facebook preview cards) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.polaristaxai.com/" />
+    <meta property="og:title" content="Polaris Tax Intelligence | ASC 740 Provision Automation" />
+    <meta property="og:description" content="Prepare reviewable tax provisions with less manual work. ASC 740 provision automation for CPA firms and in-house tax teams, built on CPA firm and in-house tax experience." />
+    <meta property="og:image" content="https://www.polaristaxai.com/assets/polaris-logo-modern-white-bg.png" />
+    <meta property="og:site_name" content="Polaris Tax Intelligence" />
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Polaris Tax Intelligence | ASC 740 Provision Automation" />
+    <meta name="twitter:description" content="ASC 740 provision automation for CPA firms and in-house tax teams." />
+    <meta name="twitter:image" content="https://www.polaristaxai.com/assets/polaris-logo-modern-white-bg.png" />
+
+    <!-- Structured data: Organization + FAQ (drives rich results) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "Polaris Tax Intelligence",
+        "url": "https://www.polaristaxai.com/",
+        "description": "ASC 740 tax provision automation and customized income-tax automations for CPA firms and in-house tax teams, built on CPA firm and in-house tax experience.",
+        "areaServed": "US",
+        "founder": { "@type": "Person", "name": "Eva Haakenson" },
+        "knowsAbout": ["ASC 740", "Tax provision", "Income tax automation", "Workpaper workflows", "Account mapping", "International tax"]
+      }
+    </script>
+
+    <style>
+      /* ---- Design tokens (pulled from the live site's styles.css) ---- */
+      :root {
+        --navy: #092642;
+        --ink: #132235;
+        --muted: #627084;
+        --line: #dce6ee;
+        --soft: #f6fafb;
+        --soft-blue: #eef6fa;
+        --white: #ffffff;
+        --accent: #2f7dd3;
+        --teal: #2aa7a0;
+        --gold: #b9954d;
+        --silver: #c9d6df;
+        --shadow: 0 24px 70px rgba(9, 38, 66, 0.11);
+        --shadow-sm: 0 10px 30px rgba(9, 38, 66, 0.08);
+        --radius: 18px;
+      }
+
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        color: var(--ink);
+        background: var(--white);
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        line-height: 1.55;
+        -webkit-font-smoothing: antialiased;
+        overflow-x: hidden; /* safety net against any horizontal overflow on small screens */
+      }
+      h1, h2, h3, p { overflow-wrap: break-word; }
+      a { color: inherit; text-decoration: none; }
+
+
+      /* ---- Header ---- */
+      .site-header {
+        display: flex; align-items: center; justify-content: space-between;
+        gap: 24px; max-width: 1180px; margin: 0 auto;
+        padding: 22px 32px;
+      }
+      .brand { display: flex; align-items: center; }
+      /* Logo is a single wide SVG lockup (720×210) — sized to EXACTLY match the live site */
+      .brand img { width: clamp(198px, 17vw, 236px); height: auto; display: block; }
+      .nav-links { display: flex; gap: 30px; font-size: 1rem; color: var(--ink); font-weight: 600; }
+      .nav-links a:hover { color: var(--accent); }
+      .header-cta {
+        background: var(--navy); color: #fff; padding: 11px 20px; border-radius: 999px;
+        font-size: 0.9rem; font-weight: 600; transition: transform .15s ease, box-shadow .15s ease;
+      }
+      .header-cta:hover { transform: translateY(-1px); box-shadow: var(--shadow-sm); }
+
+      /* ---- Hero ---- */
+      .hero {
+        position: relative; overflow: hidden;
+        max-width: 1180px; margin: 0 auto;
+        padding: 40px 32px 56px;
+        display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 56px; align-items: center;
+      }
+      /* North Star motif — subtle, ownable, carried from the logo */
+      .hero::before {
+        content: ""; position: absolute; top: -120px; right: -80px; width: 460px; height: 460px;
+        background: radial-gradient(circle at center, rgba(47,125,211,0.10), rgba(42,167,160,0.05) 45%, rgba(255,255,255,0) 70%);
+        z-index: 0; pointer-events: none;
+      }
+      .hero > * { position: relative; z-index: 1; min-width: 0; }
+      /* Grid/flex children must be allowed to shrink below content size, or they overflow on mobile */
+      .hero-copy, .automation-panel, .who-card, .services-grid article,
+      .about-body, .contact-form, .contact-copy, .consult-inner > div { min-width: 0; }
+
+      /* Eyebrow pill — matches the original site (navy text, soft border, gradient dot with glow ring) */
+      .eyebrow {
+        display: inline-flex; align-items: center; gap: 8px; width: fit-content;
+        margin: 0 0 18px; padding: 7px 14px;
+        color: var(--navy);
+        background: rgba(255, 255, 255, 0.84);
+        border: 1px solid rgba(47, 125, 211, 0.26);
+        border-radius: 999px;
+        box-shadow: 0 12px 30px rgba(9, 38, 66, 0.08);
+        font-size: clamp(0.78rem, 1.02vw, 0.88rem);
+        font-weight: 850; letter-spacing: 0.07em; text-transform: uppercase;
+      }
+      .eyebrow::before {
+        content: ""; width: 7px; height: 7px; border-radius: 50%;
+        background: linear-gradient(135deg, var(--teal), var(--accent));
+        box-shadow: 0 0 0 4px rgba(42, 167, 160, 0.11);
+      }
+
+      .hero h1 {
+        font-size: clamp(2.4rem, 4.4vw, 3.5rem);
+        line-height: 1.06; letter-spacing: -0.02em; margin: 0 0 20px;
+        color: var(--navy); font-weight: 800;
+        max-width: 15ch;
+      }
+      .hero-text { font-size: clamp(1.04rem, 1.4vw, 1.15rem); color: var(--muted); margin: 0 0 26px; max-width: 46ch; }
+
+      /* Founder proof — face + credential (was text-only before) */
+      .founder-proof {
+        display: flex; align-items: center; gap: 14px;
+        padding: 14px 16px; border: 1px solid var(--line); border-radius: 14px; background: var(--soft);
+        max-width: 46ch; margin: 0 0 28px;
+      }
+      .founder-avatar {
+        width: 46px; height: 46px; border-radius: 50%; flex: 0 0 46px;
+        background: url('assets/eva-avatar.jpg') center / cover, var(--soft-blue);
+        box-shadow: inset 0 0 0 1px rgba(9, 38, 66, 0.08);
+      }
+      .founder-proof p { margin: 0; font-size: 0.86rem; color: var(--ink); }
+      .founder-proof p b { color: var(--navy); }
+
+      /* CTA hierarchy — ONE loud button, one quiet one */
+      .hero-actions { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin-bottom: 14px; }
+      .primary-button {
+        background: var(--navy); color: #fff; padding: 15px 26px; border-radius: 999px;
+        font-weight: 600; font-size: 0.98rem; transition: transform .15s ease, box-shadow .15s ease;
+      }
+      .primary-button:hover { transform: translateY(-2px); box-shadow: 0 16px 34px rgba(9,38,66,0.22); }
+      .secondary-button {
+        color: var(--navy); padding: 15px 22px; border-radius: 999px; font-weight: 600; font-size: 0.98rem;
+        border: 1px solid var(--silver); background: #fff; transition: border-color .15s ease, color .15s ease;
+      }
+      .secondary-button:hover { border-color: var(--accent); color: var(--accent); }
+      .privacy-note { font-size: 0.8rem; color: var(--muted); margin: 6px 0 0; }
+
+      /* ---- Workflow preview card (kept — the strongest element) ---- */
+      .automation-panel {
+        background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
+        box-shadow: var(--shadow); padding: 24px;
+      }
+      .panel-topline { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 18px; }
+      .panel-topline span { font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 700; color: var(--accent); }
+      .panel-topline strong { font-size: 0.82rem; color: var(--muted); font-weight: 600; }
+      .workflow-step { display: flex; gap: 14px; align-items: flex-start; }
+      .step-token {
+        width: 34px; height: 34px; flex: 0 0 34px; border-radius: 10px; display: grid; place-items: center;
+        font-size: 0.78rem; font-weight: 700; color: #fff;
+      }
+      .step-token.input { background: var(--accent); }
+      .step-token.automate { background: var(--teal); }
+      .step-token.review { background: var(--gold); }
+      .workflow-step strong { display: block; color: var(--navy); font-size: 0.98rem; }
+      .workflow-step p { margin: 3px 0 0; font-size: 0.84rem; color: var(--muted); }
+      .workflow-line { width: 1px; height: 18px; background: var(--line); margin: 6px 0 6px 17px; }
+      .signal-row { display: flex; gap: 28px; margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--line); }
+      .signal-row span { display: block; font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); font-weight: 700; }
+      .signal-row strong { color: var(--navy); font-size: 0.98rem; }
+
+      /* ---- Proof / credibility strip (NEW) ---- */
+      .trust-strip {
+        border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--soft);
+      }
+      .trust-inner {
+        max-width: 1180px; margin: 0 auto; padding: 22px 32px;
+        display: flex; align-items: center; gap: 40px; flex-wrap: wrap; justify-content: center;
+      }
+      .trust-label { font-size: 0.74rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); font-weight: 700; }
+      .trust-logos { display: flex; gap: 34px; flex-wrap: wrap; align-items: center; }
+      .trust-logos span { font-weight: 700; color: var(--navy); opacity: 0.62; font-size: 0.98rem; letter-spacing: 0.01em; }
+      .trust-metric { display: flex; align-items: baseline; gap: 8px; }
+      .trust-metric b { font-size: 1.5rem; color: var(--navy); }
+      .trust-metric span { font-size: 0.84rem; color: var(--muted); }
+
+      /* ---- What we do ---- */
+      .services-section { max-width: 1180px; margin: 0 auto; padding: 66px 32px; }
+      .services-head { max-width: 640px; margin: 0 0 34px; }
+      .services-head h2 { font-size: clamp(1.5rem, 2.4vw, 2rem); color: var(--navy); margin: 0; letter-spacing: -0.01em; }
+      .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+      .services-grid article { border: 1px solid var(--line); border-radius: var(--radius); padding: 26px 26px 28px; background: #fff; transition: transform .15s ease, box-shadow .15s ease; }
+      .services-grid article:hover { transform: translateY(-3px); box-shadow: var(--shadow-sm); }
+      .services-grid h3 { margin: 0 0 10px; color: var(--navy); font-size: 1.1rem; }
+      .services-grid p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+
+      /* ---- Consulting strip (secondary) ---- */
+      .consult-strip { background: var(--navy); color: #fff; }
+      .consult-inner { max-width: 1180px; margin: 0 auto; padding: 46px 32px; display: flex; align-items: center; justify-content: space-between; gap: 30px; flex-wrap: wrap; }
+      .consult-inner .eyebrow { color: #fff; background: rgba(255, 255, 255, 0.08); border-color: rgba(255, 255, 255, 0.22); box-shadow: none; }
+      .consult-inner .eyebrow::before { box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.08); }
+      .consult-inner h2 { margin: 0 0 10px; font-size: 1.55rem; color: #fff; letter-spacing: -0.01em; }
+      .consult-inner p { margin: 0; color: rgba(255,255,255,0.82); max-width: 62ch; }
+      .consult-inner .secondary-button { background: transparent; color: #fff; border-color: rgba(255,255,255,0.5); flex: 0 0 auto; }
+      .consult-inner .secondary-button:hover { border-color: #fff; color: #fff; }
+
+      /* ---- Who it's for ---- */
+      .who-section { background: var(--soft); }
+      .who-inner { max-width: 1180px; margin: 0 auto; padding: 66px 32px; }
+      .who-head { max-width: 660px; margin: 0 0 32px; }
+      .who-head h2 { font-size: clamp(1.5rem, 2.4vw, 2rem); color: var(--navy); margin: 0; letter-spacing: -0.01em; }
+      .who-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+      .who-card { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 30px; box-shadow: var(--shadow-sm); }
+      .who-card .who-tag { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 800; color: var(--accent); }
+      .who-card h3 { margin: 10px 0 10px; color: var(--navy); font-size: 1.18rem; line-height: 1.25; }
+      .who-card p { margin: 0; color: var(--muted); font-size: 0.96rem; }
+
+      /* ---- About Eva ---- */
+      .about-section { max-width: 1180px; margin: 0 auto; padding: 74px 32px; display: grid; grid-template-columns: 300px 1fr; gap: 48px; align-items: start; }
+      .about-photo { width: 100%; aspect-ratio: 4 / 5; border-radius: var(--radius); background: url('assets/eva-about.jpg') center / cover, var(--soft-blue); box-shadow: var(--shadow); overflow: hidden; }
+      .about-body h2 { font-size: clamp(1.6rem, 2.6vw, 2.1rem); color: var(--navy); margin: 6px 0 18px; letter-spacing: -0.01em; }
+      .about-body p { color: var(--ink); font-size: 1.02rem; margin: 0 0 16px; max-width: 62ch; }
+      .about-body .lead-name { color: var(--navy); font-weight: 700; }
+      .mission-card { margin-top: 8px; border-left: 3px solid var(--teal); background: var(--soft); border-radius: 0 12px 12px 0; padding: 18px 22px; }
+      .mission-card span { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 800; color: var(--teal); }
+      .mission-card p { margin: 8px 0 0; color: var(--ink); font-size: 0.98rem; max-width: none; }
+
+      /* ---- FAQ ---- */
+      .faq-section { max-width: 1180px; margin: 0 auto; padding: 66px 32px; }
+      .faq-head { max-width: 660px; margin: 0 0 30px; }
+      .faq-head h2 { font-size: clamp(1.5rem, 2.4vw, 2rem); color: var(--navy); margin: 0; letter-spacing: -0.01em; }
+      .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: start; }
+      .faq-grid details { border: 1px solid var(--line); border-radius: 12px; background: #fff; padding: 2px 20px; transition: box-shadow .15s ease; }
+      .faq-grid details[open] { box-shadow: var(--shadow-sm); }
+      .faq-grid summary { cursor: pointer; list-style: none; padding: 16px 0; font-weight: 600; color: var(--navy); font-size: 1rem; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+      .faq-grid summary::-webkit-details-marker { display: none; }
+      .faq-grid summary::after { content: "+"; color: var(--accent); font-size: 1.4rem; font-weight: 300; line-height: 1; transition: transform .2s ease; }
+      .faq-grid details[open] summary::after { transform: rotate(45deg); }
+      .faq-grid details p { margin: 0 0 16px; color: var(--muted); font-size: 0.94rem; line-height: 1.55; }
+
+      /* ---- Contact ---- */
+      .contact-section { background: var(--soft); border-top: 1px solid var(--line); }
+      .contact-inner { max-width: 1180px; margin: 0 auto; padding: 74px 32px; display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+      .contact-copy h2 { font-size: clamp(1.7rem, 2.8vw, 2.3rem); color: var(--navy); margin: 8px 0 16px; letter-spacing: -0.01em; }
+      .contact-copy p { color: var(--muted); font-size: 1.02rem; margin: 0; max-width: 46ch; }
+      .contact-form { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 30px; box-shadow: var(--shadow); display: grid; gap: 16px; }
+      .contact-form label { display: grid; gap: 6px; font-size: 0.86rem; font-weight: 600; color: var(--navy); }
+      .contact-form input, .contact-form textarea { font: inherit; padding: 12px 14px; border: 1px solid var(--line); border-radius: 10px; color: var(--ink); background: #fff; resize: vertical; }
+      .contact-form input:focus, .contact-form textarea:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(47,125,211,0.14); }
+      .contact-form .botcheck { display: none; }
+      .contact-form button { background: var(--navy); color: #fff; border: none; padding: 14px; border-radius: 999px; font: inherit; font-weight: 600; cursor: pointer; transition: transform .15s ease, box-shadow .15s ease; }
+      .contact-form button:hover { transform: translateY(-2px); box-shadow: 0 16px 34px rgba(9,38,66,0.22); }
+      .contact-form button:disabled { opacity: 0.6; cursor: default; transform: none; }
+      .form-status { font-size: 0.86rem; color: var(--muted); margin: 0; }
+      .privacy-line { font-size: 0.78rem; color: var(--muted); margin: 2px 0 0; line-height: 1.5; }
+      .privacy-line a { color: var(--accent); text-decoration: underline; }
+
+      /* ---- Footer ---- */
+      .site-footer { border-top: 1px solid var(--line); }
+      .footer-inner { max-width: 1180px; margin: 0 auto; padding: 34px 32px; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+      .footer-inner img { width: 168px; height: auto; }
+      .footer-inner p { margin: 0; color: var(--muted); font-size: 0.9rem; }
+      .footer-inner a { color: var(--navy); font-weight: 600; font-size: 0.9rem; }
+
+      /* ---- Motion: additive only, safe if JS/CSS is blocked (content visible by default) ---- */
+      @media (prefers-reduced-motion: no-preference) {
+        .fade-up { animation: fade-up .6s ease both; }
+        .fade-up.d1 { animation-delay: .05s; }
+        .fade-up.d2 { animation-delay: .12s; }
+        .fade-up.d3 { animation-delay: .2s; }
+      }
+      @keyframes fade-up { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+
+      @media (max-width: 900px) {
+        .hero { grid-template-columns: 1fr; gap: 34px; padding-top: 24px; }
+        .nav-links { display: none; }
+        .automation-panel { order: 2; }
+        .services-grid { grid-template-columns: 1fr; }
+        .consult-inner { flex-direction: column; align-items: flex-start; }
+        .who-grid { grid-template-columns: 1fr; }
+        .about-section { grid-template-columns: 1fr; gap: 28px; }
+        .about-photo { max-width: 260px; }
+        .faq-grid { grid-template-columns: 1fr; }
+        .contact-inner { grid-template-columns: 1fr; gap: 28px; }
+      }
+
+      /* Small phones: keep the header from overflowing (logo + CTA were too wide) */
+      @media (max-width: 560px) {
+        .site-header { padding: 14px 16px; gap: 10px; flex-wrap: wrap; }
+        .brand img { width: 170px; min-width: 0; }
+        .header-cta { padding: 9px 15px; font-size: 0.85rem; }
+        .hero { padding: 20px 16px 40px; }
+        .who-inner, .services-section, .about-section, .faq-section { padding-left: 16px; padding-right: 16px; }
+        .consult-inner, .contact-inner, .footer-inner, .trust-inner { padding-left: 16px; padding-right: 16px; }
+        .hero h1 { font-size: clamp(2rem, 9vw, 2.6rem); }
+      }
+    </style>
   </head>
+
   <body>
-    <header class="site-header" aria-label="Primary navigation">
+
+    <header class="site-header">
       <a class="brand" href="#top" aria-label="Polaris Tax Intelligence home">
+        <!-- Original logo kept. On the live site use the relative path: assets/polaris-logo-modern.svg -->
         <img src="assets/polaris-logo-modern.svg" alt="Polaris Tax Intelligence" />
       </a>
       <nav class="nav-links" aria-label="Page sections">
-        <a href="#services">Services</a>
-        <a href="#process">Process</a>
+        <a href="#services">What we do</a>
+        <a href="#pilot">Pilot</a>
         <a href="#about">About</a>
         <a href="#faq">FAQ</a>
       </nav>
-      <a class="header-cta" href="#contact">See what can be automated</a>
+      <a class="header-cta" href="#contact">Explore a pilot</a>
     </header>
 
     <main id="top">
-      <section class="hero section">
+      <section class="hero">
         <div class="hero-copy">
-          <p class="eyebrow hero-eyebrow">Tax automation for finance and tax teams</p>
-          <h1 class="gradient-shimmer" data-text="Turn manual tax work into review-ready workflows">Turn manual tax work into review-ready workflows</h1>
-          <p class="hero-text">
-            Polaris helps businesses without in-house tax support and companies ready to modernize their tax
-            processes with practical automation, AI-enabled workflows, and experienced tax judgment.
+          <p class="eyebrow fade-up">Tax provision automation &amp; advisory</p>
+          <h1 class="fade-up d1">Turn manual tax work into review-ready workflows</h1>
+          <p class="hero-text fade-up d1">
+            Polaris helps regional CPA firms and in-house tax teams prepare reviewable tax provisions with
+            less manual work. We are currently onboarding a small number of controlled pilot partners, built
+            on CPA firm and in-house tax experience.
           </p>
-          <p class="founder-note">
-            Led by a US-based tax professional with nearly 20 years across Big 4, large and mid-size CPA firms, and
-            in-house tax teams.
-          </p>
-          <div class="hero-actions">
-            <a class="primary-button" href="#contact">See what can be automated</a>
-            <a class="secondary-button" href="#demo">Ask about example workflows</a>
-            <p class="privacy-note">Clear scope, practical recommendations, and no obligation after the first conversation.</p>
+
+          <div class="founder-proof fade-up d2">
+            <div class="founder-avatar" role="img" aria-label="Eva Haakenson"></div>
+            <p><b>Led by Eva Haakenson.</b> CPA firm and in-house experience across international tax, tax provision, and compliance.</p>
           </div>
+
+          <div class="hero-actions fade-up d2">
+            <a class="primary-button" href="#contact">Explore a pilot</a>
+            <a class="secondary-button" href="#services">See how we work</a>
+          </div>
+          <p class="privacy-note fade-up d3">Clear scope, senior judgment, and no obligation after the first conversation.</p>
         </div>
 
-        <aside class="automation-panel" aria-label="Tax automation workflow preview">
+        <aside class="automation-panel fade-up d2" aria-label="Tax automation workflow preview">
           <div class="panel-topline">
-            <span>Workflow preview</span>
-            <strong>Inputs to outputs</strong>
+            <span>How we work</span>
+            <strong>Manual → repeatable</strong>
           </div>
           <div class="workflow-card">
             <div class="workflow-step">
               <span class="step-token input">01</span>
-              <div>
-                <strong>Inputs</strong>
-                <p>Trial balance, workpapers, advisor requests</p>
-              </div>
+              <div><strong>Assess</strong><p>Map your tax calendar, data sources, tools, and manual pain points</p></div>
             </div>
             <div class="workflow-line"></div>
             <div class="workflow-step">
               <span class="step-token automate">02</span>
-              <div>
-                <strong>Automation layer</strong>
-                <p>Data checks, task assignments, automated calculations, AI-assisted review</p>
-              </div>
+              <div><strong>Automate</strong><p>Design practical workflows and apply AI where it earns its place</p></div>
             </div>
             <div class="workflow-line"></div>
             <div class="workflow-step">
               <span class="step-token review">03</span>
-              <div>
-                <strong>Review-ready output</strong>
-                <p>Linked Excel workbook, open items, exceptions, documentation</p>
-              </div>
+              <div><strong>Review-ready</strong><p>Repeatable processes with clear documentation and controls</p></div>
             </div>
           </div>
-          <div class="signal-row" aria-label="Experience signals">
-            <div>
-              <span>Experience</span>
-              <strong>Nearly 20 years</strong>
-            </div>
-            <div>
-              <span>Perspective</span>
-              <strong>Firm + in-house</strong>
-            </div>
+          <div class="signal-row">
+            <div><span>Focus</span><strong>Tax provision</strong></div>
+            <div><span>Perspective</span><strong>Firm + in-house</strong></div>
           </div>
         </aside>
       </section>
 
-      <section class="proof-strip" aria-label="Trust and operating standards">
-        <div>
-          <strong>Tax-first automation</strong>
-          <span>Technology recommendations grounded in compliance, provision, planning, and review realities.</span>
+      <!-- Experience strip (safe to broadcast — credibility, not product scope) -->
+      <div class="trust-strip">
+        <div class="trust-inner">
+          <span class="trust-label">Experience across</span>
+          <div class="trust-logos">
+            <span>Mid-size CPA firms</span>
+            <span>In-house tax</span>
+            <span>Tax provision</span>
+          </div>
         </div>
-        <div>
-          <strong>Practical AI adoption</strong>
-          <span>Use AI where it can reduce manual work, review time, and process friction.</span>
-        </div>
-        <div>
-          <strong>Lean-team friendly</strong>
-          <span>Designed for finance teams that need stronger tax processes without heavy overhead.</span>
-        </div>
-      </section>
+      </div>
 
-      <section class="section split-section" id="problems">
-        <div>
-          <p class="eyebrow">The gap</p>
-          <h2>Tax work is too important to live in scattered spreadsheets and inboxes</h2>
-        </div>
-        <div class="body-copy">
-          <p>
-            Many businesses either do not have a dedicated tax function or have a tax team that is still buried in
-            manual processes. Polaris helps clarify what should be handled internally, what should be automated,
-            and where AI and workflow tools can make tax work more reliable.
-          </p>
-          <ul class="check-list">
-            <li>Reduce manual data gathering, reconciliation, and status tracking.</li>
-            <li>Create repeatable processes for provision, compliance, planning, and advisor handoffs.</li>
-            <li>Modernize tax operations without losing control, documentation, or review discipline.</li>
-          </ul>
-        </div>
-      </section>
-
-      <section class="section services" id="services">
-        <div class="section-heading">
+      <!-- What we do — outcomes, not product internals -->
+      <section class="services-section" id="services">
+        <div class="services-head">
           <p class="eyebrow">What Polaris does</p>
-          <h2>Tax automation support for companies that need structure before they need more software</h2>
+          <h2>Practical automation, grounded in real tax experience</h2>
         </div>
-        <div class="service-grid">
+        <div class="services-grid">
           <article>
-            <span>01</span>
-            <h3>Tax process assessment</h3>
-            <p>Map current tax workflows, identify bottlenecks, and separate quick wins from deeper process changes.</p>
+            <h3>ASC 740 provision automation</h3>
+            <p>Make the tax provision more repeatable, review-ready, and easier to scale. This is the workflow our pilot partners use.</p>
           </article>
           <article>
-            <span>02</span>
-            <h3>Automation roadmap</h3>
-            <p>Prioritize where automation can reduce risk, cycle time, and manual effort across recurring tax work.</p>
+            <h3>Customized income-tax automations</h3>
+            <p>For teams with adjacent needs: data preparation, workpaper workflows, account mapping, and review controls, tailored to how your team works.</p>
           </article>
           <article>
-            <span>03</span>
-            <h3>AI workflow design</h3>
-            <p>Design practical AI-enabled workflows for document review, research support, data extraction, and drafting.</p>
-          </article>
-          <article>
-            <span>04</span>
-            <h3>Implementation support</h3>
-            <p>Help finance and tax teams configure, test, document, and adopt tools that fit their real operating model.</p>
+            <h3>Practical AI adoption</h3>
+            <p>Put AI to work where it genuinely reduces manual effort and review time, and stay honest about where it doesn’t belong.</p>
           </article>
         </div>
       </section>
 
-      <section class="section split-section mission-section" id="about" aria-label="Who Polaris is">
-        <div>
-          <p class="eyebrow">Who we are</p>
-          <h2>Modern tax processes, built by someone who understands the work</h2>
+      <!-- Who it's for — the two target audiences, by their job not their company -->
+      <section class="who-section" id="who">
+        <div class="who-inner">
+          <div class="who-head">
+            <p class="eyebrow">Who it’s for</p>
+            <h2>Built for the people who actually own the provision</h2>
+          </div>
+          <div class="who-grid">
+            <div class="who-card">
+              <span class="who-tag">Primary: regional CPA firms</span>
+              <h3>Firm staff who want more leverage on provision work</h3>
+              <p>You prepare provisions for clients and want to move faster without giving up review quality. Polaris standardizes the preparation so your team spends time on judgment, not formatting.</p>
+            </div>
+            <div class="who-card">
+              <span class="who-tag">Also for: in-house tax &amp; finance</span>
+              <h3>Controllers and tax teams carrying the provision</h3>
+              <p>You own the provision without a dedicated specialist to spare. Polaris adds structure and senior perspective to the preparation, so it’s faster to produce and easier to stand behind.</p>
+            </div>
+          </div>
         </div>
-        <div class="body-copy">
-          <p>
-            Polaris was founded by <strong>Eva Haakenson</strong>, a US-based tax professional with nearly 20 years
-            across Big 4, large and mid-size CPA firms, and in-house tax teams.
-          </p>
+      </section>
+
+      <!-- About Eva — elevated, with a real headshot slot -->
+      <section class="about-section" id="about">
+        <div class="about-photo" role="img" aria-label="Eva Haakenson, founder of Polaris Tax Intelligence"></div>
+        <div class="about-body">
+          <p class="eyebrow">About</p>
+          <h2>Modern tax work, built by someone who’s done it</h2>
+          <p>Polaris was founded by <span class="lead-name">Eva Haakenson</span>, a US-based tax professional with nearly 20 years of CPA firm and in-house experience across international tax, tax provision, and tax compliance. She has prepared and reviewed provisions from multiple perspectives, which is why Polaris is designed to be practical, reviewable, and grounded in the way tax teams actually work.</p>
+          <p>The idea is simple: pair real tax judgment with practical automation, so the provision stops being a fire drill and becomes a repeatable, review-ready process.</p>
           <div class="mission-card">
             <span>Mission</span>
-            <p>
-              Polaris helps businesses reduce repetitive manual tax work, modernize tax processes, and build
-              practical automation that is easier to run, review, and scale.
-            </p>
+            <p>Help in-house tax teams and regional CPA firms produce the tax provision with less manual work and more confidence.</p>
           </div>
         </div>
       </section>
 
-      <section class="section audience-section" aria-label="Who Polaris helps" id="who-we-help">
-        <div class="section-heading">
-          <p class="eyebrow">Who we help</p>
-          <h2>For teams that need modern tax capability before they are ready to build a full tax department</h2>
-        </div>
-        <div class="audience-grid">
+      <!-- Pilot invitation — sources a pilot without revealing the product -->
+      <section class="consult-strip" id="pilot">
+        <div class="consult-inner">
           <div>
-            <h3>Businesses without in-house tax</h3>
-            <p>Companies relying on finance teams and outside advisors that need cleaner tax processes and ownership.</p>
+            <p class="eyebrow">Now onboarding a few pilot partners</p>
+            <h2>Be one of our first pilot partners</h2>
+            <p>We are currently onboarding a small number of pilot partners for our ASC 740 provision automation workflow. Pilot partners get hands-on access and direct time with Eva to shape what we build. If that sounds like you, let’s talk.</p>
           </div>
-          <div>
-            <h3>Companies modernizing tax</h3>
-            <p>Tax and finance teams ready to automate recurring work, improve controls, and use AI responsibly.</p>
-          </div>
-          <div>
-            <h3>Tax, finance, and accounting leaders</h3>
-            <p>Teams that need a practical bridge between tax technical requirements, systems, and operations.</p>
-          </div>
+          <a class="secondary-button" href="#contact">Explore a pilot</a>
         </div>
       </section>
 
-      <section class="section process" id="process">
-        <div class="section-heading">
-          <p class="eyebrow">How it works</p>
-          <h2>A practical path from manual tax work to repeatable workflows</h2>
-        </div>
-        <div class="timeline">
-          <article>
-            <span>1</span>
-            <h3>Discover</h3>
-            <p>Review your current tax calendar, data sources, tools, advisor handoffs, and recurring pain points.</p>
-          </article>
-          <article>
-            <span>2</span>
-            <h3>Prioritize</h3>
-            <p>Identify the highest-value automation opportunities and define what should be built, bought, or improved.</p>
-          </article>
-          <article>
-            <span>3</span>
-            <h3>Implement</h3>
-            <p>Build workflows, document controls, test outputs, and help your team adopt the new process with confidence.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="section split-section demo-section" id="demo" aria-label="Automation education and demo options">
-        <div>
-          <p class="eyebrow">Not sure yet?</p>
-          <h2>Automation should earn its place in your tax process</h2>
-        </div>
-        <div class="body-copy">
-          <p>
-            If you are curious about AI and automation but unsure where it fits, Polaris can start with a focused
-            conversation instead of a full implementation. That may mean discussing example workflows, pressure
-            testing one recurring tax process, or identifying where automation is not the right answer.
-          </p>
-          <ul class="check-list">
-            <li>Talk through example workflows before committing to a project.</li>
-            <li>Understand what should and should not be automated.</li>
-            <li>Evaluate automation opportunities through a tax, finance, and accounting lens.</li>
-          </ul>
-          <div class="demo-actions">
-            <a class="secondary-button" href="#contact">Ask about example workflows</a>
-          </div>
-        </div>
-      </section>
-
-      <section class="section results" id="proof">
-        <div class="results-copy">
-          <p class="eyebrow">Representative outcomes</p>
-          <h2>Cleaner tax operations, not more tools to manage</h2>
-          <p>
-            The goal is not to add tools for their own sake. Polaris helps you create tax processes that are easier
-            to run, easier to review, and easier to scale as the business grows.
-          </p>
-        </div>
-        <div class="results-list">
-          <div>
-            <strong>Tax automation roadmap</strong>
-            <span>Prioritized opportunities, required inputs, tool options, and implementation sequencing.</span>
-          </div>
-          <div>
-            <strong>Workflow prototypes</strong>
-            <span>Practical examples for linked Excel workbooks, data intake, review, reconciliations, or document handling.</span>
-          </div>
-          <div>
-            <strong>Process documentation</strong>
-            <span>Clear ownership, controls, review points, and handoffs for internal teams and external advisors.</span>
-          </div>
-        </div>
-      </section>
-
-      <section class="section faq" id="faq">
-        <div class="section-heading">
+      <!-- FAQ — provision & pilot focused, no compliance claims -->
+      <section class="faq-section" id="faq">
+        <div class="faq-head">
           <p class="eyebrow">FAQ</p>
-          <h2>Common questions before the first call</h2>
+          <h2>Common questions before we talk</h2>
         </div>
         <div class="faq-grid">
           <details>
-            <summary>What happens after I request an automation assessment?</summary>
-            <p>
-              Polaris reviews your current tax process, goals, tools, and pain points, then recommends a focused
-              scope for assessment, roadmap, or implementation support.
-            </p>
+            <summary>What does a Polaris pilot involve?</summary>
+            <p>We start with your current provision process, map where the manual, error-prone work is, and work alongside your team to make it faster and more review-ready. It runs as a defined pilot scope before any longer-term rollout.</p>
           </details>
           <details>
-            <summary>Do we need an in-house tax team to work with Polaris?</summary>
-            <p>
-              No. Polaris is specifically designed to help businesses that do not have an in-house tax function,
-              as well as teams that already have tax resources but need modernization support.
-            </p>
+            <summary>Do we need a tax specialist on staff?</summary>
+            <p>You don’t need a dedicated tax specialist on staff to use Polaris, and Polaris doesn’t replace one either. It brings structure and senior perspective to preparing the provision, but technical positions and ASC 740 sign-off stay with your team and your advisors.</p>
           </details>
           <details>
-            <summary>Do you replace our CPA firm or tax preparer?</summary>
-            <p>
-              No. Polaris can work alongside your existing advisors by improving the process, data, documentation,
-              and handoffs that make advisory and compliance work more efficient.
-            </p>
+            <summary>Do you replace our CPA firm or auditor?</summary>
+            <p>No. Polaris improves the process, data, and documentation that feed your existing advisors and audit, which tends to make their work smoother, not redundant.</p>
           </details>
           <details>
-            <summary>What kinds of tools can you help with?</summary>
-            <p>
-              Polaris can help evaluate and design workflows using spreadsheets, databases, workflow platforms,
-              AI tools, document automation, tax software integrations, and reporting dashboards.
-            </p>
+            <summary>How do you handle our data and confidentiality?</summary>
+            <p>We take confidentiality seriously. Before any work begins, we document how pilot data is handled and agree the appropriate confidentiality and access controls. You always know what data is used and why.</p>
           </details>
           <details>
-            <summary>What if we are not sure automation is appropriate?</summary>
-            <p>
-              That is a good reason to start small. Polaris can talk through example workflows with your team so you
-              can understand practical use cases before deciding whether a broader automation project makes sense.
-            </p>
+            <summary>Will automation replace our reviewer or preparer?</summary>
+            <p>No. The point is to cut the manual preparation so the same people spend more time on review, judgment, and planning. Polaris supports your team, it doesn’t replace them.</p>
+          </details>
+          <details>
+            <summary>What if we’re not sure we’re a fit?</summary>
+            <p>That’s a fine place to start. A short conversation will tell us whether the provision is where we can help right now, or whether it isn’t the right time yet.</p>
           </details>
         </div>
       </section>
 
-      <section class="final-cta section" id="contact">
-        <div>
-          <p class="eyebrow">Start here</p>
-          <h2>Request a Polaris automation assessment</h2>
-          <p>
-            Tell us where your tax process feels manual, fragile, or hard to scale. You will get a clear next step,
-            whether that means an assessment, roadmap, prototype, or example workflow discussion.
-          </p>
+      <!-- Contact — shorter form (4 fields), wired to the same web3forms endpoint as the live site -->
+      <section class="contact-section" id="contact">
+        <div class="contact-inner">
+          <div class="contact-copy">
+            <p class="eyebrow">Start here</p>
+            <h2>Explore a provision pilot</h2>
+            <p>Tell us where your provision feels manual, fragile, or hard to scale. You’ll get a clear, honest next step, with no obligation.</p>
+          </div>
+          <form class="contact-form" aria-label="Explore a provision pilot" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="cba1fe1a-8251-4f22-8269-0f38f1c2bf09" />
+            <input type="hidden" name="subject" value="New pilot inquiry from polaristaxai.com" />
+            <input type="checkbox" name="botcheck" class="botcheck" tabindex="-1" autocomplete="off" />
+            <label>Name<input type="text" name="name" autocomplete="name" placeholder="Your name" required /></label>
+            <label>Company or firm<input type="text" name="company" autocomplete="organization" placeholder="Where you work" /></label>
+            <label>Email<input type="email" name="email" autocomplete="email" placeholder="you@example.com" required /></label>
+            <label>What does your provision look like today?<textarea name="message" rows="4" placeholder="A bit about your entities, the tools you use, and where it hurts."></textarea></label>
+            <button type="submit">Explore a pilot</button>
+            <p class="form-status" role="status" aria-live="polite"></p>
+            <p class="privacy-line">By submitting, you agree we may contact you about your inquiry. We don’t sell or share your details. See our <a href="#privacy">privacy notice</a>.</p>
+          </form>
         </div>
-        <form class="contact-form" aria-label="Request an automation assessment" action="https://api.web3forms.com/submit" method="POST">
-          <input type="hidden" name="access_key" value="cba1fe1a-8251-4f22-8269-0f38f1c2bf09" />
-          <input type="hidden" name="subject" value="New automation assessment request — polaristaxai.com" />
-          <input type="checkbox" name="botcheck" class="botcheck" tabindex="-1" autocomplete="off" />
-          <label>
-            Name
-            <input type="text" name="name" autocomplete="name" placeholder="Your name" required />
-          </label>
-          <label>
-            Company
-            <input type="text" name="company" autocomplete="organization" placeholder="Company name" />
-          </label>
-          <label>
-            Title
-            <input type="text" name="title" autocomplete="organization-title" placeholder="Your role" />
-          </label>
-          <label>
-            Email
-            <input type="email" name="email" autocomplete="email" placeholder="you@example.com" required />
-          </label>
-          <label>
-            What tax process do you want to improve?
-            <textarea name="message" rows="4" placeholder="Briefly describe the workflow, deadline, tool, recurring tax task, or demo topic."></textarea>
-          </label>
-          <button type="submit">Request an automation assessment</button>
-          <p class="form-status" role="status" aria-live="polite"></p>
-        </form>
       </section>
     </main>
 
     <footer class="site-footer">
-      <img src="assets/polaris-logo-modern.svg" alt="Polaris Tax Intelligence" />
-      <p>Tax automation consulting for modern finance and tax teams.</p>
-      <a href="#top">Back to top</a>
+      <div class="footer-inner">
+        <img src="assets/polaris-logo-modern.svg" alt="Polaris Tax Intelligence" />
+        <p>Tax automation &amp; advisory for in-house tax teams and CPA firms.</p>
+        <a href="#top">Back to top</a>
+      </div>
     </footer>
 
     <script>
       const form = document.querySelector(".contact-form");
-      const status = form.querySelector(".form-status");
-      form.addEventListener("submit", async (event) => {
-        event.preventDefault();
-        const button = form.querySelector("button[type=submit]");
-        button.disabled = true;
-        status.textContent = "Sending…";
-        try {
-          const response = await fetch(form.action, {
-            method: "POST",
-            body: new FormData(form),
-            headers: { Accept: "application/json" },
-          });
-          if (!response.ok) throw new Error("Request failed");
-          form.reset();
-          status.textContent = "Thank you — your request has been sent. We will be in touch shortly.";
-        } catch (error) {
-          status.textContent = "Something went wrong sending your request. Please email us directly or try again.";
-          button.disabled = false;
-        }
-      });
+      if (form) {
+        const status = form.querySelector(".form-status");
+        form.addEventListener("submit", async (event) => {
+          event.preventDefault();
+          const button = form.querySelector("button[type=submit]");
+          button.disabled = true;
+          status.textContent = "Sending…";
+          try {
+            const response = await fetch(form.action, {
+              method: "POST",
+              body: new FormData(form),
+              headers: { Accept: "application/json" },
+            });
+            if (!response.ok) throw new Error("Request failed");
+            form.reset();
+            status.textContent = "Thank you. Your message has been sent, and we’ll be in touch shortly.";
+          } catch (error) {
+            status.textContent = "Something went wrong. Please email us directly or try again.";
+            button.disabled = false;
+          }
+        });
+      }
     </script>
   </body>
 </html>
