@@ -297,13 +297,13 @@
 
       /* ---- Consulting strip (secondary) ---- */
       .consult-strip { background: var(--navy); color: #fff; }
-      .consult-inner { max-width: 1180px; margin: 0 auto; padding: 46px 32px; display: flex; align-items: center; justify-content: space-between; gap: 30px; flex-wrap: wrap; }
+      .consult-inner { max-width: 1180px; margin: 0 auto; padding: 46px 32px; display: flex; align-items: center; justify-content: flex-start; gap: 44px; flex-wrap: wrap; }
       .consult-inner .eyebrow { color: #fff; background: rgba(255, 255, 255, 0.08); border-color: rgba(255, 255, 255, 0.22); box-shadow: none; }
       .consult-inner .eyebrow::before { box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.08); }
       .consult-inner h2 { margin: 0 0 10px; font-size: 1.55rem; color: #fff; letter-spacing: -0.01em; }
       .consult-inner p { margin: 0; color: rgba(255,255,255,0.82); max-width: 62ch; }
-      .consult-inner .secondary-button { background: transparent; color: #fff; border-color: rgba(255,255,255,0.5); flex: 0 0 auto; }
-      .consult-inner .secondary-button:hover { border-color: #fff; color: #fff; }
+      .consult-inner .secondary-button { background: #fff; color: var(--navy); border-color: #fff; flex: 0 0 auto; }
+      .consult-inner .secondary-button:hover { background: #fff; color: var(--navy); transform: translateY(-2px); box-shadow: 0 14px 30px rgba(0,0,0,0.28); }
 
       /* ---- Who it's for ---- */
       .who-section { background: var(--soft); }
@@ -317,12 +317,12 @@
       .who-card p { margin: 0; color: var(--muted); font-size: 0.96rem; }
 
       /* ---- About Eva ---- */
-      .about-section { max-width: 1180px; margin: 0 auto; padding: 74px 32px; display: grid; grid-template-columns: 300px 1fr; gap: 48px; align-items: start; }
+      .about-section { max-width: 1180px; margin: 0 auto; padding: 74px 32px; display: grid; grid-template-columns: 270px 1fr; gap: 48px; align-items: start; }
       .about-photo { width: 100%; aspect-ratio: 4 / 5; border-radius: var(--radius); background: url('assets/eva-about.jpg') center / cover, var(--soft-blue); box-shadow: var(--shadow); overflow: hidden; }
       .about-body h2 { font-size: clamp(1.5rem, 2.3vw, 1.85rem); color: var(--navy); margin: 6px 0 18px; letter-spacing: -0.01em; }
       .about-body p { color: var(--ink); font-size: 1.02rem; margin: 0 0 16px; max-width: 74ch; }
       .about-body .lead-name { color: var(--navy); font-weight: 700; }
-      .mission-card { margin-top: 8px; border-left: 3px solid var(--teal); background: var(--soft); border-radius: 0 12px 12px 0; padding: 18px 22px; }
+      .mission-card { margin-top: 8px; border-left: 3px solid var(--teal); background: var(--soft); border-radius: 0 12px 12px 0; padding: 18px 22px; max-width: 660px; }
       .mission-card span { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 800; color: var(--teal); }
       .mission-card p { margin: 8px 0 0; color: var(--ink); font-size: 0.98rem; max-width: none; }
 
@@ -548,8 +548,8 @@
         <div class="about-body">
           <p class="eyebrow">About</p>
           <h2>Modern tax work, built by someone who’s done it</h2>
-          <p>Polaris was founded by <span class="lead-name">Eva Haakenson</span>, a US-based tax professional with nearly 20 years of CPA firm and in-house experience across international tax, tax provision, and tax compliance. She has prepared and reviewed provisions from multiple perspectives, which is why Polaris is designed to be practical, reviewable, and grounded in the way tax teams actually work.</p>
-          <p>The idea is simple: pair real tax judgment with practical automation, so the provision stops being a fire drill and becomes a repeatable, review-ready process.</p>
+          <p>Polaris was founded by <span class="lead-name">Eva Haakenson</span>, a tax professional with nearly 20 years of CPA firm and in-house experience across international tax, tax provision, and tax compliance. She has prepared and reviewed provisions from multiple perspectives, which is why Polaris is designed to be practical, reviewable, and grounded in the way tax teams actually work.</p>
+          <p>The idea is simple: pair professional tax judgment with practical automation, so the provision stops being a fire drill and becomes a repeatable, review-ready process.</p>
           <div class="mission-card">
             <span>Mission</span>
             <p>Help in-house tax teams and regional CPA firms produce the tax provision with less manual work and more confidence.</p>
@@ -561,9 +561,9 @@
       <section class="consult-strip" id="pilot">
         <div class="consult-inner">
           <div>
-            <p class="eyebrow">Now onboarding a few pilot partners</p>
+            <p class="eyebrow">Now onboarding two pilot partners</p>
             <h2>Be one of our first pilot partners</h2>
-            <p>We are currently onboarding a small number of pilot partners for our ASC 740 provision automation workflow. Pilot partners get hands-on access and direct time with Eva to shape what we build. If that sounds like you, let’s talk.</p>
+            <p>Polaris is opening two 90-day guided pilots for CPA firms and in-house tax teams. Each pilot covers up to three provision projects, with hands-on setup and mapping support, linked Excel workpapers, a review memo, and joint review of the outputs before broader rollout.</p>
           </div>
           <a class="secondary-button" href="#contact">Explore a pilot</a>
         </div>
