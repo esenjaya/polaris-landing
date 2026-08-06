@@ -69,7 +69,7 @@
       /* Header (matches home) */
       .site-header { display: flex; align-items: center; justify-content: space-between; gap: 24px; max-width: 1180px; margin: 0 auto; padding: 22px 32px; }
       .brand { display: flex; align-items: center; }
-      .brand img { width: clamp(198px, 17vw, 236px); height: auto; display: block; }
+      .brand img { width: clamp(198px, 17vw, 236px); height: auto; display: block; transform: translateX(-10%); }
       .nav-links { display: flex; gap: 30px; font-size: 1rem; color: var(--ink); font-weight: 600; }
       .nav-links a:hover { color: var(--accent); }
       .nav-links a.current { color: var(--accent); }
@@ -105,14 +105,14 @@
       /* Footer (matches home) */
       .site-footer { border-top: 1px solid var(--line); }
       .footer-inner { max-width: 1180px; margin: 0 auto; padding: 34px 32px; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
-      .footer-inner img { width: 168px; height: auto; }
-      .footer-inner p { margin: 0; color: var(--muted); font-size: 0.9rem; }
-      .footer-inner a { color: var(--navy); font-weight: 600; font-size: 0.9rem; }
+      .footer-inner img { width: 195px; height: auto; transform: translateX(-10%); }
+      .footer-inner p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+      .footer-inner a { color: var(--navy); font-weight: 600; font-size: 0.95rem; }
 
       @media (max-width: 700px) {
         .nav-links { display: none; }
         .site-header { padding: 14px 16px; gap: 10px; flex-wrap: wrap; }
-        .brand img { width: 170px; }
+        .brand img { width: 200px; min-width: 0; }
         .header-cta { padding: 9px 15px; font-size: 0.85rem; }
         .article-wrap { padding: 22px 16px 54px; }
       }
@@ -194,7 +194,7 @@
     <footer class="site-footer">
       <div class="footer-inner">
         <a href="/"><img src="/assets/polaris-logo-modern.svg" alt="Polaris Tax Intelligence" /></a>
-        <p>Tax provision and custom tax automation for in-house tax teams and CPA firms.</p>
+        <p>Tax provision automation and custom tax workflows for in-house tax teams and CPA firms.</p>
         <a href="/insights/">More insights</a>
       </div>
     </footer>

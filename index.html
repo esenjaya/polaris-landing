@@ -68,7 +68,7 @@
             "name": "What does a Polaris pilot involve?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "We start with your current provision process, map where the manual, error-prone work is, and work alongside your team to make it faster and more review-ready. It runs as a defined pilot scope before any longer-term rollout."
+              "text": "The guided pilot runs for 90 days and covers up to three provision projects. We begin with your existing process and approved inputs, support setup and mapping, generate linked Excel workpapers and a review memo, and close with a joint review."
             }
           },
           {
@@ -76,7 +76,7 @@
             "name": "Do we need a tax specialist on staff?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "You do not need a dedicated tax specialist on staff to use Polaris, and Polaris does not replace one either. It brings structure and senior perspective to preparing the provision, but technical positions and ASC 740 sign-off stay with your team and your advisors."
+              "text": "No. Polaris can support teams with varying provision capacity, but it does not replace the people responsible for input completeness, technical positions, review, and ASC 740 sign-off. Those responsibilities stay with your team and advisors."
             }
           },
           {
@@ -157,7 +157,7 @@
       }
       .brand { display: flex; align-items: center; }
       /* Logo is a single wide SVG lockup (720×210) — sized to EXACTLY match the live site */
-      .brand img { width: clamp(198px, 17vw, 236px); height: auto; display: block; }
+      .brand img { width: clamp(198px, 17vw, 236px); height: auto; display: block; transform: translateX(-10%); }
       .nav-links { display: flex; gap: 30px; font-size: 1rem; color: var(--ink); font-weight: 600; }
       .nav-links a:hover { color: var(--accent); }
       .header-cta {
@@ -196,6 +196,7 @@
         font-size: clamp(0.78rem, 1.02vw, 0.88rem);
         font-weight: 850; letter-spacing: 0.07em; text-transform: uppercase;
       }
+      .eyebrow-hero { font-size: 0.8rem; letter-spacing: 0.045em; white-space: nowrap; }
       .eyebrow::before {
         content: ""; width: 7px; height: 7px; border-radius: 50%;
         background: linear-gradient(135deg, var(--teal), var(--accent));
@@ -221,7 +222,7 @@
         background: url('assets/eva-avatar.jpg') center / cover, var(--soft-blue);
         box-shadow: inset 0 0 0 1px rgba(9, 38, 66, 0.08);
       }
-      .founder-proof p { margin: 0; font-size: 0.86rem; color: var(--ink); }
+      .founder-proof p { margin: 0; font-size: 0.92rem; color: var(--ink); }
       .founder-proof p b { color: var(--navy); }
 
       /* CTA hierarchy — ONE loud button, one quiet one */
@@ -236,6 +237,10 @@
         border: 1px solid var(--silver); background: #fff; transition: border-color .15s ease, color .15s ease;
       }
       .secondary-button:hover { border-color: var(--accent); color: var(--accent); }
+      .text-link { display: inline-flex; align-items: center; gap: 7px; color: var(--navy); font-weight: 600; font-size: 0.98rem; padding: 15px 6px; transition: color .15s ease, gap .15s ease; }
+      .text-link span { transition: transform .15s ease; }
+      .text-link:hover { color: var(--accent); }
+      .text-link:hover span { transform: translateX(3px); }
       .privacy-note { font-size: 0.8rem; color: var(--muted); margin: 6px 0 0; }
 
       /* ---- Workflow preview card (kept — the strongest element) ---- */
@@ -312,10 +317,10 @@
       .who-card p { margin: 0; color: var(--muted); font-size: 0.96rem; }
 
       /* ---- About Eva ---- */
-      .about-section { max-width: 1180px; margin: 0 auto; padding: 74px 32px; display: grid; grid-template-columns: 250px 1fr; gap: 48px; align-items: start; }
+      .about-section { max-width: 1180px; margin: 0 auto; padding: 74px 32px; display: grid; grid-template-columns: 300px 1fr; gap: 48px; align-items: start; }
       .about-photo { width: 100%; aspect-ratio: 4 / 5; border-radius: var(--radius); background: url('assets/eva-about.jpg') center / cover, var(--soft-blue); box-shadow: var(--shadow); overflow: hidden; }
-      .about-body h2 { font-size: clamp(1.6rem, 2.6vw, 2.1rem); color: var(--navy); margin: 6px 0 18px; letter-spacing: -0.01em; }
-      .about-body p { color: var(--ink); font-size: 1.02rem; margin: 0 0 16px; max-width: 62ch; }
+      .about-body h2 { font-size: clamp(1.5rem, 2.3vw, 1.85rem); color: var(--navy); margin: 6px 0 18px; letter-spacing: -0.01em; }
+      .about-body p { color: var(--ink); font-size: 1.02rem; margin: 0 0 16px; max-width: 74ch; }
       .about-body .lead-name { color: var(--navy); font-weight: 700; }
       .mission-card { margin-top: 8px; border-left: 3px solid var(--teal); background: var(--soft); border-radius: 0 12px 12px 0; padding: 18px 22px; }
       .mission-card span { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 800; color: var(--teal); }
@@ -331,7 +336,7 @@
       .faq-grid summary { cursor: pointer; list-style: none; padding: 16px 0; font-weight: 600; color: var(--navy); font-size: 1rem; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
       .faq-grid summary::-webkit-details-marker { display: none; }
       .faq-grid summary::after { content: "+"; color: var(--accent); font-size: 1.4rem; font-weight: 300; line-height: 1; transition: transform .2s ease; }
-      .faq-grid details[open] summary::after { transform: rotate(45deg); }
+      .faq-grid details[open] summary::after { content: "\2212"; transform: none; }
       .faq-grid details p { margin: 0 0 16px; color: var(--muted); font-size: 0.94rem; line-height: 1.55; }
 
       /* ---- Contact ---- */
@@ -361,9 +366,9 @@
       /* ---- Footer ---- */
       .site-footer { border-top: 1px solid var(--line); }
       .footer-inner { max-width: 1180px; margin: 0 auto; padding: 34px 32px; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
-      .footer-inner img { width: 168px; height: auto; }
-      .footer-inner p { margin: 0; color: var(--muted); font-size: 0.9rem; }
-      .footer-inner a { color: var(--navy); font-weight: 600; font-size: 0.9rem; }
+      .footer-inner img { width: 195px; height: auto; transform: translateX(-10%); }
+      .footer-inner p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+      .footer-inner a { color: var(--navy); font-weight: 600; font-size: 0.95rem; }
 
       /* ---- Motion: additive only, safe if JS/CSS is blocked (content visible by default) ---- */
       @media (prefers-reduced-motion: no-preference) {
@@ -376,6 +381,7 @@
 
       @media (max-width: 900px) {
         .hero { grid-template-columns: 1fr; gap: 34px; padding-top: 24px; }
+        .eyebrow-hero { white-space: normal; }
         .nav-links { display: none; }
         .automation-panel { order: 2; }
         .services-grid { grid-template-columns: 1fr; }
@@ -390,7 +396,7 @@
       /* Small phones: keep the header from overflowing (logo + CTA were too wide) */
       @media (max-width: 560px) {
         .site-header { padding: 14px 16px; gap: 10px; flex-wrap: wrap; }
-        .brand img { width: 170px; min-width: 0; }
+        .brand img { width: 200px; min-width: 0; }
         .header-cta { padding: 9px 15px; font-size: 0.85rem; }
         .hero { padding: 20px 16px 40px; }
         .who-inner, .services-section, .about-section, .faq-section, .privacy-inner { padding-left: 16px; padding-right: 16px; }
@@ -424,7 +430,7 @@
     <main id="top">
       <section class="hero">
         <div class="hero-copy">
-          <p class="eyebrow fade-up">Tax provision &amp; custom tax automation</p>
+          <p class="eyebrow eyebrow-hero fade-up">Tax provision automation + custom tax workflows</p>
           <h1 class="fade-up d1">Tax Provision Automation for Review-Ready Workpapers</h1>
           <p class="hero-text fade-up d1">
             Polaris helps regional CPA firms and in-house tax teams prepare reviewable tax provisions with
@@ -439,9 +445,9 @@
 
           <div class="hero-actions fade-up d2">
             <a class="primary-button" href="#contact">Explore a pilot</a>
-            <a class="secondary-button" href="#services">See how we work</a>
+            <a class="text-link" href="#services">See how we work <span aria-hidden="true">&rarr;</span></a>
           </div>
-          <p class="privacy-note fade-up d3">Clear scope, senior judgment, and no obligation after the first conversation.</p>
+          <p class="privacy-note fade-up d3">A 90-day guided pilot for up to three provision projects.</p>
         </div>
 
         <aside class="automation-panel fade-up d2" aria-label="Tax automation workflow preview">
@@ -474,7 +480,7 @@
             </div>
           </div>
           <div class="signal-row">
-            <div><span>Focus</span><strong>Tax provision</strong></div>
+            <div><span>Focus</span><strong>Provision + tax workflows</strong></div>
             <div><span>Perspective</span><strong>Firm + in-house</strong></div>
           </div>
         </aside>
@@ -572,11 +578,11 @@
         <div class="faq-grid">
           <details>
             <summary>What does a Polaris pilot involve?</summary>
-            <p>We start with your current provision process, map where the manual, error-prone work is, and work alongside your team to make it faster and more review-ready. It runs as a defined pilot scope before any longer-term rollout.</p>
+            <p>The guided pilot runs for 90 days and covers up to three provision projects. We begin with your existing process and approved inputs, support setup and mapping, generate linked Excel workpapers and a review memo, and close with a joint review.</p>
           </details>
           <details>
             <summary>Do we need a tax specialist on staff?</summary>
-            <p>You don’t need a dedicated tax specialist on staff to use Polaris, and Polaris doesn’t replace one either. It brings structure and senior perspective to preparing the provision, but technical positions and ASC 740 sign-off stay with your team and your advisors.</p>
+            <p>No. Polaris can support teams with varying provision capacity, but it does not replace the people responsible for input completeness, technical positions, review, and ASC 740 sign-off. Those responsibilities stay with your team and advisors.</p>
           </details>
           <details>
             <summary>Do you replace our CPA firm or auditor?</summary>
@@ -635,7 +641,7 @@
     <footer class="site-footer">
       <div class="footer-inner">
         <img src="assets/polaris-logo-modern.svg" alt="Polaris Tax Intelligence" />
-        <p>Tax provision and custom tax automation for in-house tax teams and CPA firms.</p>
+        <p>Tax provision automation and custom tax workflows for in-house tax teams and CPA firms.</p>
         <a href="#top">Back to top</a>
       </div>
     </footer>
