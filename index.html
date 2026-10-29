@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Polly by Polaris | ASC 740 Tax Provision Automation</title>
-<meta name="description" content="Polly by Polaris: ASC 740 tax provision automation. Less manual preparation, more team capacity and more time for review.">
+<title>Polly by Polaris | Tax Provision Preparation Workflows</title>
+<meta name="description" content="Polly automates tax provision preparation workflows, producing formula-linked Excel workpapers for your team and advisers to review.">
 <link rel="canonical" href="https://www.polaristaxai.com/" />
 
         <meta property="og:type" content="website" />
@@ -46,36 +46,109 @@
     </script>
 
 <link rel="stylesheet" href="design-v2.css">
+<style>
+.header .logo{width:270px;max-width:100%;height:auto}
+#teams .section-head{max-width:none}
+#about .eyebrow,#faq>.eyebrow,#offerings .section-head>.eyebrow,#teams .section-head>.eyebrow,#polly .section-head>.eyebrow,#contact .eyebrow,#pilot .eyebrow{font-size:18px;font-weight:600;text-transform:none;line-height:1.35}
+.output-top>strong{font-size:20px;font-weight:600;line-height:1.35}
+.output-top{flex-wrap:wrap}
+.header .nav>a:not(.button),.mobile-nav a{font-size:17px;font-weight:500}
+.footer strong{font-size:20px;font-weight:600}
+.footer>span{font-size:16px}
+.hero>.eyebrow{font-size:16px;line-height:1.4;text-transform:none}
+.hero h1 span{font-size:17px;font-weight:400}
+
+#polly .steps .step-label{font-size:16px;font-weight:600;line-height:1.35}
+@media(max-width:1000px){.header .logo{width:230px}.nav{gap:18px}}
+@media(max-width:760px){.header .logo{width:220px}.header{min-height:94px;height:auto;padding-top:12px;padding-bottom:12px}}
+@media(max-width:440px){.header .nav{display:none}.header>a{min-width:0}.header .logo{width:220px}.header .menu-toggle{margin-left:auto}}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}
+.hero .tagline,.contact h2{font-family:inherit}
+.reconciliation{grid-template-columns:1fr 1fr .8fr;gap:32px}
+.button::after{content:none}
+#contact-form .button{background:transparent;color:#06264a;border-color:#8ba3be}
+#contact-form .button:hover{background:#e8eff8;box-shadow:none}
+.retention-note{font-size:16px;margin:30px 0 0;padding-top:22px;border-top:1px solid var(--line);color:var(--muted)}
+@media(max-width:1000px){.benefit-grid{grid-template-columns:1fr;gap:20px}.benefit-grid>div,.benefit-grid>div:first-child{border:0;border-bottom:1px solid var(--line);padding:0 0 20px;display:grid;grid-template-columns:240px 1fr;gap:24px}.benefit-grid>div:last-child{border:0;padding-bottom:0}}
+@media(max-width:760px){.reconciliation{grid-template-columns:1fr;gap:15px}.benefit-grid>div,.benefit-grid>div:first-child{grid-template-columns:1fr;gap:4px}.hero h1 span{display:inline-block;margin:0 0 0 8px}}
+.hero h1 .hero-brand{font-size:26px;font-weight:600;color:#2f7dd3}
+.hero>.eyebrow{font-size:20px;color:#235f9e;line-height:1.4}
+.hero>.eyebrow::before{display:none}
+/* One blue accent for actions; green is reserved for validation status. */
+:root{--polaris-teal:#2f7dd3;--teal-ink:#235f9e}
+.hero{background:#fff;padding-top:24px}
+.hero .intro{max-width:780px}
+.hero-product{width:100%;max-width:980px;min-width:0;margin:24px auto 0}
+.hero-product picture{display:block;width:100%}
+.hero-product img{display:block;width:100%;max-width:100%;height:auto;background:#fff;border:1px solid #b7cee5;border-radius:8px;box-shadow:0 14px 36px #163e6612}
+.hero-product figcaption{padding:10px 0 16px}
+.hero .sub{margin-bottom:0}
+.hero-visual-band{background:#edf5ff;border-top:1px solid #dceafa;margin:28px -24px 0;padding:0 24px}
+.button:not(.secondary),.header .nav>.button,#contact .button:not([type=submit]){background:#235f9e;border-color:#235f9e;color:white}
+.button:not(.secondary):hover,.header .nav>.button:hover{background:#174f83;border-color:#174f83}
+.hero .actions .secondary,#contact .eyebrow{color:var(--teal-ink)}
+.benefits{background:#f7faff;border-bottom:1px solid #dceafa}
+.benefit-grid>div{position:relative}
+.benefit-grid h2{border-top:3px solid #2f7dd3;padding-top:14px}
+.benefit-grid>div:nth-child(2) h2,.benefit-grid>div:nth-child(3) h2{border-color:#2f7dd3}
+#polly{background:white}
+.steps{position:relative;gap:44px}
+.steps>div{position:relative;padding-top:22px;border-top:2px solid #acd0e9}
+.steps>div::before{content:'';position:absolute;width:12px;height:12px;top:-7px;left:0;border-radius:50%;background:#2f7dd3;border:3px solid white;box-shadow:0 0 0 1px #2f7dd3}
+#polly .steps .step-label{color:var(--teal-ink)}
+.verification-message{border-top:0;border-left:4px solid #2f7dd3;background:#edf6ff;padding:28px 30px;gap:36px}
+.output{border-color:#a9c6e1;box-shadow:0 10px 30px #06264a08}
+.output-top{background:#dcecff}
+.recon-block:last-child .value{color:#087570}
+#teams{padding-top:70px;padding-bottom:70px}
+#teams .columns{gap:0}
+.audience{border-top:0;border-left:4px solid #2f7dd3;padding:24px 30px;background:#edf5ff}
+.audience:nth-child(2){border-top:0;border-left:4px solid #2f7dd3;background:#f7f8fb}
+.audience h3{margin-bottom:16px}
+.retention-note{border:0;margin-top:24px;padding-top:0}
+#offerings{background:#fff;border-top:1px solid #dce3eb}
+.offer-title .eyebrow{color:var(--muted)}
+#about{background:#edf5ff}
+.founder{grid-template-columns:280px 1fr;max-width:1120px;gap:64px}
+.founder img{width:280px;border-radius:6px;border-bottom:6px solid #2f7dd3}
+#contact{background:#edf5ff}
+.hero h1 .hero-brand{color:var(--muted)}
+.audience li::marker{color:#2f7dd3}
+.pilot .eyebrow{color:#bedbfa}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline-color:#2f7dd3}
+@media(max-width:1000px){.benefit-grid h2{margin-bottom:0}.founder{grid-template-columns:220px 1fr;gap:40px}.founder img{width:220px}}
+@media(max-width:760px){.hero-visual-band{margin-left:-24px;margin-right:-24px}.hero-product{max-width:560px}.steps{gap:25px}.steps>div{border-bottom:0;padding-top:18px}.verification-message{padding:24px;gap:16px}.audience{padding:24px}.founder{grid-template-columns:160px 1fr;gap:28px}.founder img{width:160px}#teams{padding-top:48px;padding-bottom:48px}.benefit-grid h2{padding-top:12px}}
+@media(max-width:440px){.hero-visual-band{margin-left:-20px;margin-right:-20px;padding-left:20px;padding-right:20px}.hero-product{margin:20px auto 0}.hero-product figcaption{font-size:12px}.founder{grid-template-columns:1fr}.founder img{width:190px}.audience{padding:22px}.verification-message{padding:22px}.hero .intro{font-size:17px}}
+</style>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "3e464f15ede34bcd8b127b769230fc96"}'></script>
 </head>
 <body>
+
 <a class="skip" href="#main">Skip to content</a>
 <header class="wrap header"><a href="#main" aria-label="Polaris home"><img class="logo" src="assets/polaris-logo-modern.svg" alt="Polaris Tax Intelligence"></a><button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-nav"><span></span><span></span><span></span></button><nav class="nav" aria-label="Main navigation"><a href="#polly">Explore Polly</a><a href="#offerings">Services</a><a href="#about">About</a><a href="https://www.polaristaxai.com/insights/">Insights</a><a class="button" href="https://calendly.com/ehaakenson-polaristaxai/30min" target="_blank" rel="noopener noreferrer">Let's talk</a></nav></header><nav id="mobile-nav" class="mobile-nav" aria-label="Mobile navigation" hidden><a href="#polly">Explore Polly</a><a href="#offerings">Services</a><a href="#teams">For your team</a><a href="#about">About</a><a href="#faq">Questions</a><a href="https://www.polaristaxai.com/insights/">Insights</a><a href="#contact">Contact</a></nav>
 <main id="main">
 <section class="wrap hero">
-<p class="eyebrow">ASC 740 Automation + Custom Built</p>
-<h1>Polly <span>by Polaris</span></h1>
+<p class="eyebrow">Tax provision preparation workflows</p>
+<h1>Polly <span>by <strong class="hero-brand">Polaris</strong></span></h1>
 <p class="tagline">A tax provision. <em>Not a fire drill.</em></p>
-<p class="intro">Tax provision automation for in-house teams and CPA firms. Less manual preparation. More time for review.</p>
+<p class="intro">Polly turns your trial balance and supporting inputs into formula-linked Excel workpapers, with validation and tie-out checks. Less preparation. More time for review.</p>
 <div class="actions"><a class="button" href="#polly">Explore Polly</a><a class="button secondary" href="https://calendly.com/ehaakenson-polaristaxai/30min" target="_blank" rel="noopener noreferrer">Let's talk</a></div>
-<p class="sub">Multi-entity calculations in minutes once inputs and mappings are ready.</p><figure class="hero-product"><picture><source media="(max-width: 600px)" srcset="assets/workpaper-mobile.png" width="600" height="240"><img src="assets/workpaper-preview.png" width="1200" height="260" alt="Sample current-tax summary: U.S. $4,496,972 plus foreign $2,168,053 equals $6,665,025; the supporting schedule agrees with a zero difference and OK status."></picture><figcaption>Sample workbook values &middot; Recalculated in Excel</figcaption></figure>
+<p class="sub">Multi-entity calculations in minutes once inputs and mappings are ready.</p><div class="hero-visual-band"><figure class="hero-product"><picture><source media="(max-width:600px)" srcset="assets/workpaper-mobile.png" width="600" height="240"><img src="assets/workpaper-preview.png" width="1200" height="260" alt="Sample workbook: current-tax summary and supporting schedule each total $6,665,025, with zero difference and OK status."></picture><figcaption>Sample workbook values &middot; Recalculated in Excel</figcaption></figure></div>
 </section>
 <section class="benefits" aria-label="Benefits"><div class="wrap benefit-grid">
-<div><h2>Less preparation cost</h2><p>Reduce repetitive calculation and schedule updates so experienced staff spend less time on routine preparation.</p></div>
-<div><h2>More team capacity</h2><p>Free up time for review, explaining results, and additional client engagements.</p></div>
+<div><h2>Less preparation cost</h2><p>Reduce routine preparation and rework to help protect engagement margins and make better use of your tax budget.</p></div>
+<div><h2>More team capacity</h2><p>Give your team more capacity for review, explaining results, and additional client engagements.</p></div>
 <div><h2>Reduce manual-error risk</h2><p>Generate linked calculations and check that the main provision agrees with its supporting schedules.</p></div>
 </div></section>
 
-<section class="band" id="polly"><div class="wrap section"><div class="section-head"><p class="eyebrow">Meet Polly</p><h2>From approved inputs to workpapers you can review.</h2><p>Polly automates ASC 740 calculations: the income tax amounts reported in financial statements. Your team evaluates the tax treatment and reviews the results.</p></div>
+<section class="band" id="polly"><div class="wrap section"><div class="section-head"><p class="eyebrow">Meet Polly</p><h2>From your trial balance to workpapers you can review.</h2><p>Polly handles repeatable preparation within your tax provision process: calculations, supporting schedules, and checks. It generates Excel workpapers for your team and advisers to review, rather than replacing their review.</p></div>
 <div class="steps"><div><p class="step-label">01 &nbsp; Set up</p><h3>Map your accounts and entities</h3><p>Prepare the trial balance and supporting tax data. Review how accounts feed the provision before running calculations.</p></div><div><p class="step-label">02 &nbsp; Calculate</p><h3>Generate workpapers in minutes</h3><p>Run supported calculations and produce formula-linked Excel schedules. When inputs change, update them and rerun.</p></div><div><p class="step-label">03 &nbsp; Review</p><h3>Trace the numbers and check the totals</h3><p>Follow formulas to supporting inputs. Use the tie-out report to see which checks passed and which exceptions need investigation.</p></div></div>
 <div class="verification-message" style="margin-top:36px;max-width:850px"><h3>Calculation checks before review</h3><p>Polly independently recalculates the finished Excel workbook and compares the formula results against what its calculation engine computed. If the results disagree, the download is blocked. A tie-out report documents the checks and exceptions, helping your team catch calculation discrepancies before review.</p></div>
 <div class="output" aria-label="Formula trace from the supplied Polly workbook"><div class="output-top"><strong>Trace the calculation. Check that it ties.</strong><span class="fine">Polly sample output &middot; Calculated in Excel</span></div>
 <div class="trace-intro"><h3>One current-tax total. Two schedules. One check.</h3><p>The summary brings together U.S. and foreign current tax. The supporting schedule totals the entity-level calculations. Polly checks that those two totals agree.</p></div>
 <div class="reconciliation">
 <div class="recon-block"><p class="label">Current-tax summary</p><p class="value">$6,665,025</p><p class="detail">U.S. $4,496,972 + foreign $2,168,053</p></div>
-<div class="recon-symbol" aria-hidden="true">=</div>
 <div class="recon-block"><p class="label">Supporting schedule</p><p class="value">$6,665,025</p><p class="detail">Entity-level current tax, in USD</p></div>
-<div class="recon-symbol" aria-hidden="true">&rarr;</div>
 <div class="recon-block"><p class="label">Difference</p><p class="value">$0 <span class="ok-badge">OK</span></p><p class="detail">Summary agrees with support</p></div>
 </div><p class="control-threshold">This example ties exactly. The workbook flags absolute differences of $1 or more; the threshold is not a materiality conclusion.</p>
 <details class="trace-details"><summary>See the workbook links and formulas</summary><p class="fine" style="margin-top:14px">Entity columns shown relate to this sample workbook. The summary tab and supporting tab have different column layouts.</p><div class="table-wrap"><table><thead><tr><th>Workbook cell</th><th>Formula</th></tr></thead><tbody><tr><td>Current Tax - Summary!C10 (U.S.)</td><td><code>='Current Tax'!C27+'Current Tax'!D27</code></td></tr><tr><td>Current Tax - Summary!D10 (foreign)</td><td><code>='Current Tax'!E27+'Current Tax'!F27+'Current Tax'!G27+'Current Tax'!H27</code></td></tr><tr><td>Current Tax - Summary!E10 (total)</td><td><code>=C10+D10</code></td></tr><tr><td>Current Tax!I27 (support)</td><td><code>=SUM(C27:H27)</code></td></tr><tr><td>Control!B20 (difference)</td><td><code>='Current Tax - Summary'!E10-'Current Tax'!I27</code></td></tr><tr><td>Control!C20 (status)</td><td><code>=IF(ABS(B20)&lt;1,"OK","Check")</code></td></tr></tbody></table></div></details>
@@ -86,32 +159,32 @@
 
 </div></section>
 
-<section class="wrap section" id="teams"><div class="section-head"><p class="eyebrow">Built around your team's priorities</p><h2>The deadline stays. The manual work shouldn't.</h2></div>
-<div class="columns"><article class="audience"><h3>In-house tax leaders</h3><p>Late trial-balance changes can leave a small team updating schedules when it needs to be reviewing results.</p><ul><li>Get the provision ready for review sooner to support a timely financial close.</li><li>Leave more time to investigate changes and explain the tax results to finance leadership.</li><li>Make better use of your existing team's capacity.</li><li>Support staff retention by reducing repetitive work and easing pressure on experienced tax professionals.</li></ul><p class="fine" style="margin-top:20px">For U.S. companies with foreign branches or subsidiaries, and U.S. subsidiaries of foreign parents.</p></article>
-<article class="audience"><h3>Regional CPA firms</h3><p>Experienced provision staff juggle multiple engagements. Routine preparation can become a bottleneck to delivery and growth.</p><ul><li>Protect engagement margins by reducing repetitive preparation and rework.</li><li>Create capacity for additional client engagements.</li><li>Give reviewers traceable calculations and supporting schedules in Excel.</li><li>Support staff retention by reducing repetitive work and easing pressure on experienced tax professionals.</li></ul><p class="fine" style="margin-top:20px">For firms preparing corporate tax provisions for multinational clients.</p></article></div></section>
+<section class="wrap section" id="teams"><div class="section-head"><p class="eyebrow">Built around your team's priorities</p><h2>The deadline stays. The manual work shouldn&rsquo;t.</h2><p>Reduce repetitive preparation so your team has more capacity and more time for review.</p></div>
+<div class="columns"><article class="audience"><h3>In-house tax leaders</h3><p>When a small tax team spends its close updating calculations and schedules, less time remains to investigate and explain the results. Polly supports that preparation work.</p><ul><li>Get the provision ready for review sooner to support a timely financial close.</li><li>Leave more time to investigate changes and explain the tax results to finance leadership.</li><li>Make better use of your existing team's capacity.</li></ul><p class="fine" style="margin-top:20px">For U.S. companies with foreign branches or subsidiaries, and U.S. subsidiaries of foreign parents.</p></article>
+<article class="audience"><h3>Regional CPA firms</h3><p>Your experienced provision staff juggle multiple engagements. Automating routine preparation can free capacity for review and additional client work, while your firm retains its review responsibilities.</p><ul><li>Protect engagement margins by reducing repetitive preparation and rework.</li><li>Create capacity for additional client engagements.</li><li>Give reviewers traceable calculations and supporting schedules in Excel.</li></ul><p class="fine" style="margin-top:20px">For firms preparing corporate tax provisions for multinational clients.</p></article></div><p class="retention-note">Support staff retention by reducing repetitive work and easing pressure on experienced tax professionals.</p></section>
 <section class="band" id="offerings"><div class="wrap section"><div class="section-head"><p class="eyebrow">How we can help</p><h2>A standard product. Room for your specific needs.</h2></div><div class="offerings">
-<article class="offering"><div class="offer-title"><p class="eyebrow">Tax provision</p><h3>Polly Standard</h3></div><div class="offer-body"><p>The standard calculation workflow, formula-linked Excel workpapers and validation checks, with mapping setup and onboarding defined in the agreed scope.</p><h4 style="margin:0">Included U.S. international and state calculations</h4><ul class="included-list"><li>NCTI and its related foreign tax credit</li><li>Foreign branch calculations</li><li>Section 78 gross-up</li><li>Section 250 deduction</li><li>Section 163(j) limitation</li><li>California combined reporting</li></ul><p class="fine">Included in Polly Standard, subject to confirming your entities, tax period and applicable scenarios. California net operating losses and credits are not included.</p><a href="#pilot">Discuss a guided pilot &rarr;</a></div></article>
+<article class="offering"><div class="offer-title"><p class="eyebrow">Tax provision</p><h3>Polly Standard</h3></div><div class="offer-body"><p>A repeatable tax provision preparation workflow: calculations, supporting Excel workpapers, and validation checks. Mapping setup and onboarding are defined in the agreed scope.</p><h4 style="margin:0">Included U.S. international and state calculations</h4><ul class="included-list"><li>NCTI and its related foreign tax credit</li><li>Foreign branch calculations</li><li>Section 78 gross-up</li><li>Section 250 deduction</li><li>Section 163(j) limitation</li><li>California combined reporting</li></ul><p class="fine">Included in Polly Standard, subject to confirming your entities, tax period and applicable scenarios. California net operating losses and credits are not included.</p><a href="#pilot">Discuss a guided pilot &rarr;</a></div></article>
 <article class="offering"><div class="offer-title"><p class="eyebrow">Product + enhancements</p><h3>Polly + Customization</h3></div><div class="offer-body"><p>Need calculations or workflows beyond the standard scope? We'll discuss your requirements and confirm feasibility, scope and pricing separately.</p><p>Custom development is quoted separately, with ongoing maintenance fees defined in the proposal.</p><a href="#contact">Discuss your requirements &rarr;</a></div></article>
 <article class="offering"><div class="offer-title"><p class="eyebrow">Other tax workflows</p><h3>Custom Tax Automation</h3></div><div class="offer-body"><p>Tailored automation for other tax workflows. Project scope, development fees and ongoing maintenance fees are agreed before work begins.</p><a href="#contact">Tell us about the process &rarr;</a></div></article>
 </div></div></section>
-<div class="pilot-band"><section class="wrap pilot" id="pilot"><div><p class="eyebrow" style="margin-bottom:8px">Guided pilot &middot; Polly Standard only</p><h2>See whether Polly Standard fits your workflow</h2><p>Evaluate Polly Standard within an agreed scope, using an approved data and testing environment. We define the evaluation goals together before starting.</p><p class="fine" style="margin-top:12px">Customization and Custom Tax Automation projects are separately scoped and are not included in the pilot.</p></div><a class="button" href="#contact">Discuss a pilot</a></section></div>
+<div class="pilot-band"><section class="wrap pilot" id="pilot"><div><p class="eyebrow" style="margin-bottom:8px">Guided pilot &middot; Polly Standard only</p><h2>See whether Polly Standard fits your workflow</h2><p>Evaluate a defined preparation workflow using an approved data and testing environment. We agree on scope and evaluation goals, including the preparation effort and usefulness of the workpapers for review.</p><p class="fine" style="margin-top:12px">Customization and Custom Tax Automation projects are separately scoped and are not included in the pilot.</p></div><a class="button" href="#contact">Discuss a pilot</a></section></div>
 <section class="band" id="about"><div class="wrap section founder"><img src="assets/eva-about.jpg" alt="Eva Haakenson, CPA, founder of Polaris Tax Intelligence" loading="lazy"><div><p class="eyebrow">Built from first-hand tax experience</p><h2>Eva Haakenson, CPA</h2><p>Nearly 20 years of public accounting and in-house tax experience, including tax provision, international tax and compliance.</p><p>I founded Polaris after seeing how much time tax teams spend preparing and updating workpapers. Polly brings that experience into a repeatable workflow, so teams can spend less time on routine preparation and more time understanding the results.</p><a href="https://calendly.com/ehaakenson-polaristaxai/30min" target="_blank" rel="noopener noreferrer">Let's talk about your team's process &rarr;</a></div></div></section>
 <section class="wrap section faq" id="faq"><p class="eyebrow">Before we talk</p><h2>A few practical questions.</h2>
 <details><summary>What is agreed before we start?</summary><p>We confirm your entities, tax period and applicable scenarios, along with setup, training, support, access and deliverables. Current calculation rules are designed for 2026. Custom work is separately scoped and is not included automatically.</p></details><details><summary>What happens when our inputs change?</summary><p>New accounts or changed tax treatments require review and updates to mappings or inputs before rerunning. Polly generates its own workpapers; it does not automatically update every existing workbook.</p></details>
 <details><summary>How much time will Polly save our team?</summary><p>Supported calculations run in minutes once inputs and mappings are ready. Total preparation and review time depends on your data, complexity and existing process. An evaluation can compare the work involved; we do not promise a fixed percentage saving.</p></details>
-<details><summary>Does Polly replace our tax team's review?</summary><p>No. Your team reviews mappings, tax treatments, inputs and results. Validation checks identify specific inconsistencies; they do not establish that the entire provision is correct.</p></details>
+<details><summary>Does Polly replace our tax team or advisers?</summary><p>No. Polly supports the preparation work, not the replacement of your team, CPA firm, or auditor. Your team and advisers retain their respective responsibilities for tax treatments, inputs, review, and sign-off. Validation checks identify specific inconsistencies; they do not establish that the entire provision is correct.</p></details>
 <details><summary>Can we test against a prior-year provision?</summary><p>We first agree on the period and supported scope. Polly currently uses 2026 tax rules, so prior-year data may produce differences caused by law changes. Those differences need to be addressed in the evaluation plan before comparison.</p></details>
 <details><summary>How is Polly hosted, and how would we share data?</summary><p>Polly currently runs locally for demonstrations and pilot work; it is not yet a fully hosted SaaS offering. We can begin with fictional data. Before company data is shared, we agree on an approved environment, confidentiality, access, permitted use and retention with your team.</p></details>
-<details><summary>What if our existing tools already do this?</summary><p>Start with the preparation your current tools already handle well and what remains manual. Polly is worth evaluating only if its supported workflow addresses a meaningful need for your team.</p></details>
+<details><summary>What if our existing tools already do this?</summary><p>Start with the preparation your current tools already handle well and what remains manual. The conversation is about a specific preparation workflow, not replacing your entire provision system. Polly is worth evaluating only if it addresses a meaningful gap.</p></details>
 </section>
-<section class="band" id="contact"><div class="wrap section contact"><div><p class="eyebrow">Let's talk</p><h2>Where would less manual work make the biggest difference?</h2><p>Tell us about your provision process or another tax workflow. We'll explore whether Polly or a scoped automation project is a fit.</p><p>Eva Haakenson, CPA<br><a href="mailto:ehaakenson@polaristaxai.com">ehaakenson@polaristaxai.com</a><br>Business phone: <a href="tel:+15106033026">(510) 603-3026</a></p><p><a class="button" href="https://calendly.com/ehaakenson-polaristaxai/30min" target="_blank" rel="noopener noreferrer">Schedule a 30-minute call</a></p><p class="fine">An initial conversation does not require confidential workpapers.</p></div><form id="contact-form" action="https://api.web3forms.com/submit" method="POST"><input type="hidden" name="access_key" value="cba1fe1a-8251-4f22-8269-0f38f1c2bf09" /><input type="hidden" name="subject" value="New Polaris website inquiry"><input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none"><label>Name<input name="name" autocomplete="name" required></label><label>Work email<input name="email" type="email" autocomplete="email" required></label><label>Message<textarea name="message" rows="4" placeholder="Tell us what you would like to improve. Please do not include confidential tax data."></textarea></label><button class="button" type="submit">Send a message</button><p class="status" role="status" aria-live="polite"></p><p class="fine">By submitting, you agree we may contact you about your inquiry. See our <a href="#privacy">privacy notice</a>. Please do not submit confidential tax data.</p></form></div></section>
+<section class="band" id="contact"><div class="wrap section contact"><div><p class="eyebrow">Let's talk</p><h2>Where would less manual work make the biggest difference?</h2><p>Where is your team spending time preparing or updating provision workpapers? Let's discuss whether Polly can take on a defined part of that work, or whether a custom workflow would be a better fit.</p><p>Eva Haakenson, CPA<br><a href="mailto:ehaakenson@polaristaxai.com">ehaakenson@polaristaxai.com</a><br>Business phone: <a href="tel:+15106033026">(510) 603-3026</a></p><p><a class="button" href="https://calendly.com/ehaakenson-polaristaxai/30min" target="_blank" rel="noopener noreferrer">Schedule a 30-minute call</a></p><p class="fine">An initial conversation does not require confidential workpapers.</p></div><form id="contact-form" action="https://api.web3forms.com/submit" method="POST"><input type="hidden" name="access_key" value="cba1fe1a-8251-4f22-8269-0f38f1c2bf09" /><input type="hidden" name="subject" value="New Polaris website inquiry"><input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none"><label>Name<input name="name" autocomplete="name" required></label><label>Work email<input name="email" type="email" autocomplete="email" required></label><label>Message<textarea name="message" rows="4" placeholder="Tell us what you would like to improve. Please do not include confidential tax data."></textarea></label><button class="button" type="submit">Send a message</button><p class="status" role="status" aria-live="polite"></p><p class="fine">By submitting, you agree we may contact you about your inquiry. See our <a href="#privacy">privacy notice</a>. Please do not submit confidential tax data.</p></form></div></section>
 <div class="wrap privacy-wrap"><details id="privacy"><summary>Privacy notice</summary><h2>How we handle your information</h2>
           <p>Polaris Tax Intelligence collects the details you choose to share through the contact form on this site: your name, email address, and message. We use that information solely to respond to your inquiry and to follow up about a potential engagement.</p>
           <p>We do not sell, rent, or share your information with third parties for their own marketing, and your inquiry is treated confidentially. Contact form submissions are delivered to us through a third-party form provider that passes your message along and does not use it for advertising.</p>
           <p>To understand how people find and use this site, we use privacy-friendly analytics that provide aggregate information about page visits, referring sources, and site performance. These analytics do not use cookies or track visitors across other websites, and we do not use them to identify individual visitors.</p>
           <p>If you would like us to update or delete the details you have shared, let us know through the contact form above and we will take care of it.</p></details></div>
 </main>
-<footer><div class="wrap footer"><strong>Polaris Tax Intelligence</strong><span>ASC 740 Automation + Custom Built</span><a href="#main">Back to top</a></div></footer>
+<footer><div class="wrap footer"><strong>Polaris Tax Intelligence</strong><span>Tax provision preparation and custom workflows</span><a href="#main">Back to top</a></div></footer>
 <script>
 document.getElementById('contact-form').addEventListener('submit',async e=>{
 e.preventDefault();const form=e.currentTarget,button=form.querySelector('button'),status=form.querySelector('.status');button.disabled=true;status.textContent='Sending...';
